@@ -14532,11 +14532,11 @@ Note:  Отчёт отправлен по электронной почте руководству.
 
 
 t:  
-c:  Учеба
+c:  Настройка
 date:  02.02.2026
-record_type:  Учеба
-record_type_r:  Учеба
-Executor:  Холбеков.Г.Т.
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Рахматов В.А.,Холбеков.Г.Т.
 mail_node_name:  
 mail_node_name_r:  
 node_number:  
@@ -14561,18 +14561,18 @@ adv_param_label_3:
 adv_param_name_3_r:  
 $UpdatedBy:  CN=tech10/O=Guli
 
-Events:  Ознакомление с возможностями системы мониторинга Zabbix.
-Установка Zabbix на тестовую виртуальную машину Debian.
-Добавление первых устройств в мониторинг через SNMP.
-Note:  Базовый мониторинг сети настроен.
+Events:  Получение оборудования MAIPU NR22 со склада. Проверка комплектности:
+шасси — 1 шт., модули uplink — 2 шт., блок питания — 1 шт., документация.
+Подготовка места установки в серверном шкафу. Монтаж крепёжных направляющих.
+Note:  Оборудование принято по накладной. Замечаний нет.
 
 
 t:  
-c:  Профилактика
+c:  Настройка
 date:  03.02.2026
-record_type:  Профилактика
-record_type_r:  Профилактика
-Executor:  Холбеков.Г.Т.
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Рахматов В.А.,Холбеков.Г.Т.
 mail_node_name:  
 mail_node_name_r:  
 node_number:  
@@ -14597,54 +14597,18 @@ adv_param_label_3:
 adv_param_name_3_r:  
 $UpdatedBy:  CN=tech10/O=Guli
 
-Events:  Проверка температурного режима на всех районных узлах в летний период.
-Измерение температуры в шкафах: SIR-764 — 28°C, SIR-765 — 26°C, SIR-767 — 27°C. Норма.
-Куллеры в коммутаторах работают штатно.
-Note:  Рекомендовано следить за температурой в июле-августе.
+Events:  Монтаж оборудования MAIPU NR22 в серверный шкаф. Установка модулей uplink.
+Подключение кабелей питания. Первое включение оборудования.
+Проверка индикации — все индикаторы в норме.
+Note:  Оборудование успешно смонтировано и включено.
 
 
 t:  
-c:  Работа с организациями
+c:  Настройка
 date:  04.02.2026
-record_type:  Работа с организациями
-record_type_r:  Работа с организациями
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Составление договора с Агробанком на сопровождение антивирусной базы.
-Установка Kaspersky KIT на сервер банка. Настройка группы защиты.
-Проверка связи агентов с сервером администрирования.
-Note:  Договор подписан, акт выполненных работ оформлен.
-
-
-t:  
-c:  Учеба
-date:  05.02.2026
-record_type:  Учеба
-record_type_r:  Учеба
-Executor:  Холбеков.Г.Т.
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Рахматов В.А.,Холбеков.Г.Т.
 mail_node_name:  
 mail_node_name_r:  
 node_number:  
@@ -14669,10 +14633,46 @@ adv_param_label_3:
 adv_param_name_3_r:  
 $UpdatedBy:  CN=tech10/O=Guli
 
-Events:  Изучение технологии MPLS: принципы работы, метки, LSP.
-Ознакомление с применением MPLS в сетях операторов связи.
-Просмотр обучающих материалов по настройке MPLS на Cisco.
-Note:  Основы MPLS изучены.
+Events:  Начальная конфигурация MAIPU NR22 через консольный порт.
+Установка имени устройства, паролей, настройка управляющего интерфейса.
+Обновление прошивки до актуальной версии. Перезагрузка оборудования.
+Note:  Прошивка обновлена. Базовая конфигурация сохранена.
+
+
+t:  
+c:  Настройка
+date:  05.02.2026
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Рахматов В.А.,Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Настройка интерфейсов MAIPU NR22. Конфигурирование uplink-портов для подключения к магистрали.
+Настройка VLAN для разделения трафика абонентов и управления.
+Проверка прохождения тегированного трафика между портами.
+Note:  Интерфейсы настроены. VLAN созданы и проверены.
 
 
 t:  
@@ -14680,7 +14680,7 @@ c:  Настройка
 date:  06.02.2026
 record_type:  Настройка
 record_type_r:  Настройка
-Executor:  Холбеков.Г.Т.
+Executor:  Рахматов В.А.,Холбеков.Г.Т.
 mail_node_name:  
 mail_node_name_r:  
 node_number:  
@@ -14705,18 +14705,18 @@ adv_param_label_3:
 adv_param_name_3_r:  
 $UpdatedBy:  CN=tech10/O=Guli
 
-Events:  Установка и настройка нового коммутатора ES-3500 в узле SIR-764 (Навруз телеком).
-Перенос конфигурации с ES-2108. Подключение абонентов, проверка связи.
-Составлен акт монтажа оборудования.
-Note:  Оборудование введено в эксплуатацию.
+Events:  Настройка маршрутизации на MAIPU NR22. Прописаны статические маршруты к районным узлам.
+Настройка маршрута по умолчанию. Проверка таблицы маршрутизации.
+Тестовая проверка связи с узлами SIR-764, SIR-765, SIR-767 — пинг прошёл.
+Note:  Маршрутизация работает корректно.
 
 
 t:  
-c:  Работа с организациями
+c:  Настройка
 date:  09.02.2026
-record_type:  Работа с организациями
-record_type_r:  Работа с организациями
-Executor:  Холбеков.Г.Т.
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Рахматов В.А.,Холбеков.Г.Т.
 mail_node_name:  
 mail_node_name_r:  
 node_number:  
@@ -14730,7 +14730,7 @@ inventar_1:
 port:  
 time_no_work:  
 adv_param_name_3:  
-category:  
+category:  нет
 node_name:  
 node_location:  
 adv_param_label:  
@@ -14741,10 +14741,10 @@ adv_param_label_3:
 adv_param_name_3_r:  
 $UpdatedBy:  CN=tech10/O=Guli
 
-Events:  Поездка в районный узел SIR-765 (Пахтаабад). Снятие показания электросчётчика.
-Проверка оборудования центра мониторинга. Установка обновлений антивирусной базы Касперского.
-Проверка связи с головным офисом.
-Note:  Отчёт по поездке внесён в журнал.
+Events:  Настройка ACL на MAIPU NR22 для ограничения несанкционированного доступа.
+Настройка SNMP для мониторинга через систему Dude.
+Добавление MAIPU NR22 на карту мониторинга. Проверка получения трапов.
+Note:  ACL настроен. Мониторинг оборудования активирован.
 
 
 t:  
@@ -14752,7 +14752,7 @@ c:  Настройка
 date:  10.02.2026
 record_type:  Настройка
 record_type_r:  Настройка
-Executor:  Холбеков.Г.Т.
+Executor:  Рахматов В.А.,Холбеков.Г.Т.
 mail_node_name:  
 mail_node_name_r:  
 node_number:  
@@ -14777,18 +14777,18 @@ adv_param_label_3:
 adv_param_name_3_r:  
 $UpdatedBy:  CN=tech10/O=Guli
 
-Events:  Настройка синхронизации времени (NTP) на всех серверах и активном оборудовании.
-Указан NTP-сервер 10.0.177.1. Проверка синхронизации на 12 устройствах.
-Расхождение времени устранено.
-Note:  Все устройства синхронизированы с точностью до 1 секунды.
+Events:  Перенос абонентских подключений с Cisco 7200 на MAIPU NR22.
+Поочерёдное переключение абонентов: банки, районные узлы.
+Проверка связи каждого абонента после переключения. Сбоев не зафиксировано.
+Note:  Перенесено 8 абонентских подключений. Все работают в штатном режиме.
 
 
 t:  
-c:  Профилактика
+c:  Настройка
 date:  11.02.2026
-record_type:  Профилактика
-record_type_r:  Профилактика
-Executor:  Холбеков.Г.Т.
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Рахматов В.А.,Холбеков.Г.Т.
 mail_node_name:  
 mail_node_name_r:  
 node_number:  
@@ -14813,10 +14813,10 @@ adv_param_label_3:
 adv_param_name_3_r:  
 $UpdatedBy:  CN=tech10/O=Guli
 
-Events:  Монтаж нового ИБП в узле SIR-768 (Сырдарья).
-Демонтаж вышедшего из строя ИБП. Установка нового UPS 3000VA.
-Подключение оборудования, настройка параметров ИБП.
-Note:  Акт монтажа/демонтажа составлен, внесён в базу.
+Events:  Продолжение переноса абонентов на MAIPU NR22. Настройка QoS для приоритизации трафика.
+Перенос оставшихся подключений районных узлов SIR-768, SIR-766, SIR-761.
+Проверка связи. Тестирование скорости каналов.
+Note:  Все абоненты перенесены. Скорость каналов соответствует норме.
 
 
 t:  
@@ -14824,7 +14824,7 @@ c:  Настройка
 date:  12.02.2026
 record_type:  Настройка
 record_type_r:  Настройка
-Executor:  Холбеков.Г.Т.
+Executor:  Рахматов В.А.,Холбеков.Г.Т.
 mail_node_name:  
 mail_node_name_r:  
 node_number:  
@@ -14849,18 +14849,18 @@ adv_param_label_3:
 adv_param_name_3_r:  
 $UpdatedBy:  CN=tech10/O=Guli
 
-Events:  Настройка синхронизации времени (NTP) на всех серверах и активном оборудовании.
-Указан NTP-сервер 10.0.177.1. Проверка синхронизации на 12 устройствах.
-Расхождение времени устранено.
-Note:  Все устройства синхронизированы с точностью до 1 секунды.
+Events:  Проверка стабильности работы MAIPU NR22 после полного переноса абонентов.
+Мониторинг загрузки процессора и памяти в течение дня: CPU — 12%, RAM — 34%.
+Устранение незначительных несоответствий в конфигурации. Сохранение финальной конфигурации.
+Note:  Оборудование работает стабильно. Конфигурация сохранена в резервную копию.
 
 
 t:  
-c:  Текущие работы
+c:  Настройка
 date:  13.02.2026
-record_type:  Текущие работы
-record_type_r:  Текущие работы
-Executor:  Холбеков.Г.Т.
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Рахматов В.А.,Холбеков.Г.Т.
 mail_node_name:  
 mail_node_name_r:  
 node_number:  
@@ -14874,7 +14874,7 @@ inventar_1:
 port:  
 time_no_work:  
 adv_param_name_3:  
-category:  
+category:  нет
 node_name:  
 node_location:  
 adv_param_label:  
@@ -14885,10 +14885,11 @@ adv_param_label_3:
 adv_param_name_3_r:  
 $UpdatedBy:  CN=tech10/O=Guli
 
-Events:  Плановое резервное копирование конфигураций всех маршрутизаторов и коммутаторов.
-Конфигурации сохранены в каталог /Backup на сервере. Проверка целостности файлов.
-Всего сохранено: 14 конфигурационных файлов.
-Note:  Резервные копии актуальны.
+Events:  Составление акта ввода в эксплуатацию оборудования MAIPU NR22.
+Внесение данных об оборудовании в базу инвентаризации. Инвентарный номер присвоен.
+Передача технической документации и конфигурационных файлов на хранение.
+Cisco 7200 переведён в режим резервного оборудования.
+Note:  Акт подписан. Оборудование введено в эксплуатацию.
 
 
 t:  
@@ -14964,8 +14965,368 @@ Note:  Связь установлена, замечаний нет.
 
 
 t:  
-c:  Профилактика
+c:  Работа с организациями
 date:  18.02.2026
+record_type:  Работа с организациями
+record_type_r:  Работа с организациями
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Составление договора с Агробанком на сопровождение антивирусной базы.
+Установка Kaspersky KIT на сервер банка. Настройка группы защиты.
+Проверка связи агентов с сервером администрирования.
+Note:  Договор подписан, акт выполненных работ оформлен.
+
+
+t:  
+c:  Учеба
+date:  19.02.2026
+record_type:  Учеба
+record_type_r:  Учеба
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Изучение технологии MPLS: принципы работы, метки, LSP.
+Ознакомление с применением MPLS в сетях операторов связи.
+Просмотр обучающих материалов по настройке MPLS на Cisco.
+Note:  Основы MPLS изучены.
+
+
+t:  
+c:  Настройка
+date:  20.02.2026
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Установка и настройка нового коммутатора ES-3500 в узле SIR-764 (Навруз телеком).
+Перенос конфигурации с ES-2108. Подключение абонентов, проверка связи.
+Составлен акт монтажа оборудования.
+Note:  Оборудование введено в эксплуатацию.
+
+
+t:  
+c:  Работа с организациями
+date:  23.02.2026
+record_type:  Работа с организациями
+record_type_r:  Работа с организациями
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Поездка в районный узел SIR-765 (Пахтаабад). Снятие показания электросчётчика.
+Проверка оборудования центра мониторинга. Установка обновлений антивирусной базы Касперского.
+Проверка связи с головным офисом.
+Note:  Отчёт по поездке внесён в журнал.
+
+
+t:  
+c:  Настройка
+date:  24.02.2026
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Настройка синхронизации времени (NTP) на всех серверах и активном оборудовании.
+Указан NTP-сервер 10.0.177.1. Проверка синхронизации на 12 устройствах.
+Расхождение времени устранено.
+Note:  Все устройства синхронизированы с точностью до 1 секунды.
+
+
+t:  
+c:  Профилактика
+date:  25.02.2026
+record_type:  Профилактика
+record_type_r:  Профилактика
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Монтаж нового ИБП в узле SIR-768 (Сырдарья).
+Демонтаж вышедшего из строя ИБП. Установка нового UPS 3000VA.
+Подключение оборудования, настройка параметров ИБП.
+Note:  Акт монтажа/демонтажа составлен, внесён в базу.
+
+
+t:  
+c:  Настройка
+date:  26.02.2026
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Настройка синхронизации времени (NTP) на всех серверах и активном оборудовании.
+Указан NTP-сервер 10.0.177.1. Проверка синхронизации на 12 устройствах.
+Расхождение времени устранено.
+Note:  Все устройства синхронизированы с точностью до 1 секунды.
+
+
+t:  
+c:  Текущие работы
+date:  27.02.2026
+record_type:  Текущие работы
+record_type_r:  Текущие работы
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Плановое резервное копирование конфигураций всех маршрутизаторов и коммутаторов.
+Конфигурации сохранены в каталог /Backup на сервере. Проверка целостности файлов.
+Всего сохранено: 14 конфигурационных файлов.
+Note:  Резервные копии актуальны.
+
+
+t:  
+c:  Профилактика
+date:  02.03.2026
+record_type:  Профилактика
+record_type_r:  Профилактика
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Монтаж нового ИБП в узле SIR-768 (Сырдарья).
+Демонтаж вышедшего из строя ИБП. Установка нового UPS 3000VA.
+Подключение оборудования, настройка параметров ИБП.
+Note:  Акт монтажа/демонтажа составлен, внесён в базу.
+
+
+t:  
+c:  Настройка
+date:  03.03.2026
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Настройка модема GHDSL для Микрокредитбанка. Параметры подключения согласно схеме.
+Проверка связи банка с головным офисом. Скорость соединения: 10 Мбит/с.
+Проверка доступа к банковским приложениям.
+Note:  Связь установлена, замечаний нет.
+
+
+t:  
+c:  Профилактика
+date:  04.03.2026
 record_type:  Профилактика
 record_type_r:  Профилактика
 Executor:  Холбеков.Г.Т.
@@ -15001,7 +15362,7 @@ Note:  Резервные копии конфигураций актуальны.
 
 t:  
 c:  Текущие работы
-date:  19.02.2026
+date:  05.03.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -15037,7 +15398,7 @@ Note:  График утверждён руководством.
 
 t:  
 c:  Работа с организациями
-date:  20.02.2026
+date:  06.03.2026
 record_type:  Работа с организациями
 record_type_r:  Работа с организациями
 Executor:  Холбеков.Г.Т.
@@ -15073,7 +15434,7 @@ Note:  Показания внесены в таблицу учёта.
 
 t:  
 c:  Текущие работы
-date:  23.02.2026
+date:  09.03.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -15109,7 +15470,7 @@ Note:  Схема актуализирована и сохранена в базу документов.
 
 t:  
 c:  Поездка
-date:  24.02.2026
+date:  10.03.2026
 record_type:  Поездка
 record_type_r:  Поездка
 Executor:  Холбеков.Г.Т.
@@ -15145,7 +15506,7 @@ Note:  Накладная оформлена и подписана.
 
 t:  
 c:  Учеба
-date:  25.02.2026
+date:  11.03.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -15181,7 +15542,7 @@ Note:  Основы MPLS изучены.
 
 t:  
 c:  Работа с организациями
-date:  26.02.2026
+date:  12.03.2026
 record_type:  Работа с организациями
 record_type_r:  Работа с организациями
 Executor:  Холбеков.Г.Т.
@@ -15217,7 +15578,7 @@ Note:  Все работы выполнены, акт подписан.
 
 t:  
 c:  Учеба
-date:  27.02.2026
+date:  13.03.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -15253,7 +15614,7 @@ Note:  Скрипт резервного копирования работает корректно.
 
 t:  
 c:  Настройка
-date:  02.03.2026
+date:  16.03.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -15289,7 +15650,7 @@ Note:  Оборудование введено в эксплуатацию.
 
 t:  
 c:  Профилактика
-date:  03.03.2026
+date:  17.03.2026
 record_type:  Профилактика
 record_type_r:  Профилактика
 Executor:  Холбеков.Г.Т.
@@ -15324,7 +15685,7 @@ Note:  Сформирована таблица показаний для отчёта в телеком.
 
 t:  
 c:  Поездка
-date:  04.03.2026
+date:  18.03.2026
 record_type:  Поездка
 record_type_r:  Поездка
 Executor:  Холбеков.Г.Т.
@@ -15360,7 +15721,7 @@ Note:  Накладная оформлена и подписана.
 
 t:  
 c:  Настройка
-date:  05.03.2026
+date:  19.03.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -15396,7 +15757,7 @@ Note:  Резервный канал настроен и проверен.
 
 t:  
 c:  Текущие работы
-date:  06.03.2026
+date:  23.03.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -15432,7 +15793,7 @@ Note:  Резервные копии актуальны.
 
 t:  
 c:  Профилактика
-date:  09.03.2026
+date:  24.03.2026
 record_type:  Профилактика
 record_type_r:  Профилактика
 Executor:  Холбеков.Г.Т.
@@ -15468,7 +15829,7 @@ Note:  Резервные копии конфигураций актуальны.
 
 t:  
 c:  Отчет
-date:  10.03.2026
+date:  25.03.2026
 record_type:  Отчет
 record_type_r:  Отчет
 Executor:  Холбеков.Г.Т.
@@ -15504,7 +15865,7 @@ Note:  Отчёт передан в бухгалтерию.
 
 t:  
 c:  Настройка
-date:  11.03.2026
+date:  26.03.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -15540,7 +15901,7 @@ Note:  Резервный канал настроен и проверен.
 
 t:  
 c:  Работа с организациями
-date:  12.03.2026
+date:  27.03.2026
 record_type:  Работа с организациями
 record_type_r:  Работа с организациями
 Executor:  Холбеков.Г.Т.
@@ -15576,7 +15937,7 @@ Note:  Отчёт по поездке внесён в журнал.
 
 t:  
 c:  Учеба
-date:  13.03.2026
+date:  30.03.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -15608,366 +15969,6 @@ Events:  Изучение настройки IPSec VPN на оборудовании Cisco.
 Ознакомление с типами шифрования AES-256, режимами IKEv1 и IKEv2.
 Практика настройки Site-to-Site VPN в Cisco Packet Tracer.
 Note:  Лабораторная работа по VPN выполнена.
-
-
-t:  
-c:  Настройка
-date:  16.03.2026
-record_type:  Настройка
-record_type_r:  Настройка
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Настройка модема GHDSL для Микрокредитбанка. Параметры подключения согласно схеме.
-Проверка связи банка с головным офисом. Скорость соединения: 10 Мбит/с.
-Проверка доступа к банковским приложениям.
-Note:  Связь установлена, замечаний нет.
-
-
-t:  
-c:  Работа с организациями
-date:  17.03.2026
-record_type:  Работа с организациями
-record_type_r:  Работа с организациями
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Формирование реестра электроэнергии для телекома за прошедший месяц.
-Подготовка справок по районным узлам. Передача реестра в телеком.
-Получение счёт-фактуры от телекома.
-Note:  Финансовые документы переданы в бухгалтерию.
-
-
-t:  
-c:  Учеба
-date:  18.03.2026
-record_type:  Учеба
-record_type_r:  Учеба
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Изучение работы с командной строкой Linux: скрипты для автоматизации резервного копирования.
-Написание bash-скрипта для сохранения конфигураций оборудования по расписанию.
-Тестирование скрипта в среде Debian.
-Note:  Скрипт резервного копирования работает корректно.
-
-
-t:  
-c:  Профилактика
-date:  19.03.2026
-record_type:  Профилактика
-record_type_r:  Профилактика
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Сохранение конфигурационных файлов коммутаторов со всех районных узлов.
-Файлы сохранены через веб-браузер и Telnet в каталог Config на сервере 10.0.177.30.
-Всего сохранено конфигураций: 9 устройств.
-Note:  Резервные копии конфигураций актуальны.
-
-
-t:  
-c:  Учеба
-date:  23.03.2026
-record_type:  Учеба
-record_type_r:  Учеба
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Изучение настройки VLAN на коммутаторах Zyxel MES-серии.
-Создание VLAN, настройка trunk и access портов.
-Практическая настройка на тестовом коммутаторе в лаборатории.
-Note:  Навыки настройки VLAN Zyxel освоены.
-
-
-t:  
-c:  Текущие работы
-date:  24.03.2026
-record_type:  Текущие работы
-record_type_r:  Текущие работы
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Плановое резервное копирование конфигураций всех маршрутизаторов и коммутаторов.
-Конфигурации сохранены в каталог /Backup на сервере. Проверка целостности файлов.
-Всего сохранено: 14 конфигурационных файлов.
-Note:  Резервные копии актуальны.
-
-
-t:  
-c:  Настройка
-date:  25.03.2026
-record_type:  Настройка
-record_type_r:  Настройка
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Настройка коммутатора MES-3500 в узле SIR-751.
-Создание VLAN, привязка портов. Настройка trunk-портов между коммутаторами.
-Сохранение конфигурации. Проверка связи с абонентами.
-Note:  Конфигурация сохранена в резервную копию.
-
-
-t:  
-c:  Профилактика
-date:  26.03.2026
-record_type:  Профилактика
-record_type_r:  Профилактика
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Сохранение конфигурационных файлов коммутаторов со всех районных узлов.
-Файлы сохранены через веб-браузер и Telnet в каталог Config на сервере 10.0.177.30.
-Всего сохранено конфигураций: 9 устройств.
-Note:  Резервные копии конфигураций актуальны.
-
-
-t:  
-c:  Настройка
-date:  27.03.2026
-record_type:  Настройка
-record_type_r:  Настройка
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Настройка синхронизации времени (NTP) на всех серверах и активном оборудовании.
-Указан NTP-сервер 10.0.177.1. Проверка синхронизации на 12 устройствах.
-Расхождение времени устранено.
-Note:  Все устройства синхронизированы с точностью до 1 секунды.
-
-
-t:  
-c:  Работа с организациями
-date:  30.03.2026
-record_type:  Работа с организациями
-record_type_r:  Работа с организациями
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Составление договора с Агробанком на сопровождение антивирусной базы.
-Установка Kaspersky KIT на сервер банка. Настройка группы защиты.
-Проверка связи агентов с сервером администрирования.
-Note:  Договор подписан, акт выполненных работ оформлен.
 
 
 t:  
@@ -16007,8 +16008,368 @@ Note:  Связь установлена, замечаний нет.
 
 
 t:  
-c:  Профилактика
+c:  Работа с организациями
 date:  01.04.2026
+record_type:  Работа с организациями
+record_type_r:  Работа с организациями
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Формирование реестра электроэнергии для телекома за прошедший месяц.
+Подготовка справок по районным узлам. Передача реестра в телеком.
+Получение счёт-фактуры от телекома.
+Note:  Финансовые документы переданы в бухгалтерию.
+
+
+t:  
+c:  Учеба
+date:  02.04.2026
+record_type:  Учеба
+record_type_r:  Учеба
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Изучение работы с командной строкой Linux: скрипты для автоматизации резервного копирования.
+Написание bash-скрипта для сохранения конфигураций оборудования по расписанию.
+Тестирование скрипта в среде Debian.
+Note:  Скрипт резервного копирования работает корректно.
+
+
+t:  
+c:  Профилактика
+date:  03.04.2026
+record_type:  Профилактика
+record_type_r:  Профилактика
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Сохранение конфигурационных файлов коммутаторов со всех районных узлов.
+Файлы сохранены через веб-браузер и Telnet в каталог Config на сервере 10.0.177.30.
+Всего сохранено конфигураций: 9 устройств.
+Note:  Резервные копии конфигураций актуальны.
+
+
+t:  
+c:  Учеба
+date:  06.04.2026
+record_type:  Учеба
+record_type_r:  Учеба
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Изучение настройки VLAN на коммутаторах Zyxel MES-серии.
+Создание VLAN, настройка trunk и access портов.
+Практическая настройка на тестовом коммутаторе в лаборатории.
+Note:  Навыки настройки VLAN Zyxel освоены.
+
+
+t:  
+c:  Текущие работы
+date:  07.04.2026
+record_type:  Текущие работы
+record_type_r:  Текущие работы
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Плановое резервное копирование конфигураций всех маршрутизаторов и коммутаторов.
+Конфигурации сохранены в каталог /Backup на сервере. Проверка целостности файлов.
+Всего сохранено: 14 конфигурационных файлов.
+Note:  Резервные копии актуальны.
+
+
+t:  
+c:  Настройка
+date:  08.04.2026
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Настройка коммутатора MES-3500 в узле SIR-751.
+Создание VLAN, привязка портов. Настройка trunk-портов между коммутаторами.
+Сохранение конфигурации. Проверка связи с абонентами.
+Note:  Конфигурация сохранена в резервную копию.
+
+
+t:  
+c:  Профилактика
+date:  09.04.2026
+record_type:  Профилактика
+record_type_r:  Профилактика
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Сохранение конфигурационных файлов коммутаторов со всех районных узлов.
+Файлы сохранены через веб-браузер и Telnet в каталог Config на сервере 10.0.177.30.
+Всего сохранено конфигураций: 9 устройств.
+Note:  Резервные копии конфигураций актуальны.
+
+
+t:  
+c:  Настройка
+date:  10.04.2026
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Настройка синхронизации времени (NTP) на всех серверах и активном оборудовании.
+Указан NTP-сервер 10.0.177.1. Проверка синхронизации на 12 устройствах.
+Расхождение времени устранено.
+Note:  Все устройства синхронизированы с точностью до 1 секунды.
+
+
+t:  
+c:  Работа с организациями
+date:  13.04.2026
+record_type:  Работа с организациями
+record_type_r:  Работа с организациями
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Составление договора с Агробанком на сопровождение антивирусной базы.
+Установка Kaspersky KIT на сервер банка. Настройка группы защиты.
+Проверка связи агентов с сервером администрирования.
+Note:  Договор подписан, акт выполненных работ оформлен.
+
+
+t:  
+c:  Настройка
+date:  14.04.2026
+record_type:  Настройка
+record_type_r:  Настройка
+Executor:  Холбеков.Г.Т.
+mail_node_name:  
+mail_node_name_r:  
+node_number:  
+node_param:  
+abonent_name:  
+res_data:  
+model_hardware:  
+inventar:  
+adv_param_name2:  
+inventar_1:  
+port:  
+time_no_work:  
+adv_param_name_3:  
+category:  нет
+node_name:  
+node_location:  
+adv_param_label:  
+adv_param_name:  
+adv_param_label_2:  
+adv_param_name2_r:  
+adv_param_label_3:  
+adv_param_name_3_r:  
+$UpdatedBy:  CN=tech10/O=Guli
+
+Events:  Настройка модема GHDSL для Микрокредитбанка. Параметры подключения согласно схеме.
+Проверка связи банка с головным офисом. Скорость соединения: 10 Мбит/с.
+Проверка доступа к банковским приложениям.
+Note:  Связь установлена, замечаний нет.
+
+
+t:  
+c:  Профилактика
+date:  15.04.2026
 record_type:  Профилактика
 record_type_r:  Профилактика
 Executor:  Холбеков.Г.Т.
@@ -16043,7 +16404,7 @@ Note:  Сформирована таблица показаний для отчёта в телеком.
 
 t:  
 c:  Поездка
-date:  02.04.2026
+date:  16.04.2026
 record_type:  Поездка
 record_type_r:  Поездка
 Executor:  Холбеков.Г.Т.
@@ -16079,7 +16440,7 @@ Note:  Протокол совещания получен.
 
 t:  
 c:  Учеба
-date:  03.04.2026
+date:  17.04.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -16115,7 +16476,7 @@ Note:  Лабораторная работа по VPN выполнена.
 
 t:  
 c:  Настройка
-date:  06.04.2026
+date:  20.04.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -16151,7 +16512,7 @@ Note:  Оборудование введено в эксплуатацию. Связь стабильна.
 
 t:  
 c:  Профилактика
-date:  07.04.2026
+date:  21.04.2026
 record_type:  Профилактика
 record_type_r:  Профилактика
 Executor:  Холбеков.Г.Т.
@@ -16187,7 +16548,7 @@ Note:  Все показатели в норме. Следующая профилактика через месяц.
 
 t:  
 c:  Учеба
-date:  08.04.2026
+date:  22.04.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -16223,7 +16584,7 @@ Note:  Навыки настройки VLAN Zyxel освоены.
 
 t:  
 c:  Текущие работы
-date:  09.04.2026
+date:  23.04.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -16259,7 +16620,7 @@ Note:  Оборудование работает стабильно после настройки.
 
 t:  
 c:  Работа с организациями
-date:  10.04.2026
+date:  24.04.2026
 record_type:  Работа с организациями
 record_type_r:  Работа с организациями
 Executor:  Холбеков.Г.Т.
@@ -16295,7 +16656,7 @@ Note:  Показания внесены в таблицу учёта.
 
 t:  
 c:  Профилактика
-date:  13.04.2026
+date:  27.04.2026
 record_type:  Профилактика
 record_type_r:  Профилактика
 Executor:  Холбеков.Г.Т.
@@ -16330,7 +16691,7 @@ Note:  Реестр показаний сформирован и передан в телеком.
 
 t:  
 c:  Учеба
-date:  14.04.2026
+date:  28.04.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -16366,7 +16727,7 @@ Note:  Топология с STP настроена корректно.
 
 t:  
 c:  Профилактика
-date:  15.04.2026
+date:  29.04.2026
 record_type:  Профилактика
 record_type_r:  Профилактика
 Executor:  Холбеков.Г.Т.
@@ -16401,7 +16762,7 @@ Note:  Оборудование работает нормально. Температура снизилась на 3°C.
 
 t:  
 c:  Текущие работы
-date:  16.04.2026
+date:  30.04.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -16437,7 +16798,7 @@ Note:  Отчёт по сбоям подготовлен и отправлен руководству.
 
 t:  
 c:  Настройка
-date:  17.04.2026
+date:  01.05.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -16473,7 +16834,7 @@ Note:  Оборудование введено в эксплуатацию. Связь стабильна.
 
 t:  
 c:  Текущие работы
-date:  20.04.2026
+date:  04.05.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -16509,7 +16870,7 @@ Note:  Оборудование работает стабильно после настройки.
 
 t:  
 c:  Учеба
-date:  21.04.2026
+date:  05.05.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -16545,7 +16906,7 @@ Note:  Навыки настройки VLAN Zyxel освоены.
 
 t:  
 c:  Работа с организациями
-date:  22.04.2026
+date:  06.05.2026
 record_type:  Работа с организациями
 record_type_r:  Работа с организациями
 Executor:  Холбеков.Г.Т.
@@ -16581,7 +16942,7 @@ Note:  Реестр показаний сформирован и передан в телеком.
 
 t:  
 c:  Настройка
-date:  23.04.2026
+date:  07.05.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -16617,7 +16978,7 @@ Note:  Все устройства синхронизированы с точностью до 1 секунды.
 
 t:  
 c:  Учеба
-date:  24.04.2026
+date:  08.05.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -16653,7 +17014,7 @@ Note:  Топология с STP настроена корректно.
 
 t:  
 c:  Настройка
-date:  27.04.2026
+date:  11.05.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -16689,7 +17050,7 @@ Note:  Оборудование введено в эксплуатацию. Связь стабильна.
 
 t:  
 c:  Отчет
-date:  28.04.2026
+date:  12.05.2026
 record_type:  Отчет
 record_type_r:  Отчет
 Executor:  Холбеков.Г.Т.
@@ -16725,7 +17086,7 @@ Note:  Заявка передана на утверждение руководству.
 
 t:  
 c:  Текущие работы
-date:  29.04.2026
+date:  13.05.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -16761,7 +17122,7 @@ Note:  Схема актуализирована и сохранена в базу документов.
 
 t:  
 c:  Учеба
-date:  30.04.2026
+date:  14.05.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -16797,7 +17158,7 @@ Note:  Раздел по сетевой безопасности изучен.
 
 t:  
 c:  Профилактика
-date:  01.05.2026
+date:  15.05.2026
 record_type:  Профилактика
 record_type_r:  Профилактика
 Executor:  Холбеков.Г.Т.
@@ -16833,7 +17194,7 @@ Note:  Акт монтажа/демонтажа составлен, внесён в базу.
 
 t:  
 c:  Настройка
-date:  04.05.2026
+date:  18.05.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -16869,7 +17230,7 @@ Note:  Конфигурация сохранена в резервную копию.
 
 t:  
 c:  Текущие работы
-date:  05.05.2026
+date:  19.05.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -16905,7 +17266,7 @@ Note:  Схема актуализирована и сохранена в базу документов.
 
 t:  
 c:  Настройка
-date:  06.05.2026
+date:  20.05.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -16941,7 +17302,7 @@ Note:  Изменения внесены, связь восстановлена.
 
 t:  
 c:  Текущие работы
-date:  07.05.2026
+date:  21.05.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -16977,7 +17338,7 @@ Note:  Резервные копии актуальны.
 
 t:  
 c:  Поездка
-date:  08.05.2026
+date:  22.05.2026
 record_type:  Поездка
 record_type_r:  Поездка
 Executor:  Холбеков.Г.Т.
@@ -17013,7 +17374,7 @@ Note:  Акты подписаны и внесены в базу документов.
 
 t:  
 c:  Текущие работы
-date:  11.05.2026
+date:  25.05.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -17049,7 +17410,7 @@ Note:  График утверждён руководством.
 
 t:  
 c:  Поездка
-date:  12.05.2026
+date:  26.05.2026
 record_type:  Поездка
 record_type_r:  Поездка
 Executor:  Холбеков.Г.Т.
@@ -17085,7 +17446,7 @@ Note:  Накладная оформлена и подписана.
 
 t:  
 c:  Работа с организациями
-date:  13.05.2026
+date:  28.05.2026
 record_type:  Работа с организациями
 record_type_r:  Работа с организациями
 Executor:  Холбеков.Г.Т.
@@ -17121,7 +17482,7 @@ Note:  Финансовые документы переданы в бухгалтерию.
 
 t:  
 c:  Учеба
-date:  14.05.2026
+date:  29.05.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -17157,7 +17518,7 @@ Note:  Лабораторная работа по VPN выполнена.
 
 t:  
 c:  Текущие работы
-date:  15.05.2026
+date:  01.06.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -17193,7 +17554,7 @@ Note:  График утверждён руководством.
 
 t:  
 c:  Работа с организациями
-date:  18.05.2026
+date:  02.06.2026
 record_type:  Работа с организациями
 record_type_r:  Работа с организациями
 Executor:  Холбеков.Г.Т.
@@ -17229,7 +17590,7 @@ Note:  Финансовые документы переданы в бухгалтерию.
 
 t:  
 c:  Настройка
-date:  19.05.2026
+date:  03.06.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -17266,7 +17627,7 @@ Note:  Подключение выполнено успешно. Пинг в норме.
 
 t:  
 c:  Профилактика
-date:  20.05.2026
+date:  04.06.2026
 record_type:  Профилактика
 record_type_r:  Профилактика
 Executor:  Холбеков.Г.Т.
@@ -17301,7 +17662,7 @@ Note:  Рекомендована следующая чистка через 3 месяца.
 
 t:  
 c:  Учеба
-date:  21.05.2026
+date:  05.06.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -17337,7 +17698,7 @@ Note:  Скрипт резервного копирования работает корректно.
 
 t:  
 c:  Отчет
-date:  22.05.2026
+date:  08.06.2026
 record_type:  Отчет
 record_type_r:  Отчет
 Executor:  Холбеков.Г.Т.
@@ -17373,7 +17734,7 @@ Note:  Отчёт отправлен по электронной почте руководству.
 
 t:  
 c:  Настройка
-date:  25.05.2026
+date:  09.06.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -17409,7 +17770,7 @@ Note:  Резервный канал настроен и проверен.
 
 t:  
 c:  Работа с организациями
-date:  26.05.2026
+date:  10.06.2026
 record_type:  Работа с организациями
 record_type_r:  Работа с организациями
 Executor:  Холбеков.Г.Т.
@@ -17445,7 +17806,7 @@ Note:  Реестр показаний сформирован и передан в телеком.
 
 t:  
 c:  Настройка
-date:  28.05.2026
+date:  11.06.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -17481,7 +17842,7 @@ Note:  Изменения внесены, связь восстановлена.
 
 t:  
 c:  Учеба
-date:  29.05.2026
+date:  12.06.2026
 record_type:  Учеба
 record_type_r:  Учеба
 Executor:  Холбеков.Г.Т.
@@ -17517,7 +17878,7 @@ Note:  Сертификаты обновлены для 5 пользователей.
 
 t:  
 c:  Текущие работы
-date:  01.06.2026
+date:  15.06.2026
 record_type:  Текущие работы
 record_type_r:  Текущие работы
 Executor:  Холбеков.Г.Т.
@@ -17553,7 +17914,7 @@ Note:  Замечаний не выявлено.
 
 t:  
 c:  Работа с организациями
-date:  02.06.2026
+date:  16.06.2026
 record_type:  Работа с организациями
 record_type_r:  Работа с организациями
 Executor:  Холбеков.Г.Т.
@@ -17589,7 +17950,7 @@ Note:  Отчёт по поездке внесён в журнал.
 
 t:  
 c:  Отчет
-date:  03.06.2026
+date:  17.06.2026
 record_type:  Отчет
 record_type_r:  Отчет
 Executor:  Холбеков.Г.Т.
@@ -17625,7 +17986,7 @@ Note:  Отчёт передан в бухгалтерию.
 
 t:  
 c:  Профилактика
-date:  04.06.2026
+date:  18.06.2026
 record_type:  Профилактика
 record_type_r:  Профилактика
 Executor:  Холбеков.Г.Т.
@@ -17660,7 +18021,7 @@ Note:  Показания занесены в журнал и таблицу учёта электроэнергии.
 
 t:  
 c:  Настройка
-date:  05.06.2026
+date:  19.06.2026
 record_type:  Настройка
 record_type_r:  Настройка
 Executor:  Холбеков.Г.Т.
@@ -17692,364 +18053,5 @@ Events:  Переустановка и настройка Lotus Notes клиента на рабочей станции сотруд
 Обновление ID-файла пользователя. Проверка доступа к почтовому ящику и базам данных.
 Настройка репликации с сервером.
 Note:  Клиент работает корректно.
-
-
-t:  
-c:  Профилактика
-date:  08.06.2026
-record_type:  Профилактика
-record_type_r:  Профилактика
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Плановая очистка оборудования в узле SIR-751 (Гулистан телеком).
-Очистка коммутаторов, маршрутизатора и медиаконверторов от пыли.
-Проверка ИБП, тест автономной работы — 18 минут.
-Note:  Все показатели в норме. Следующая профилактика через месяц.
-
-
-t:  
-c:  Учеба
-date:  09.06.2026
-record_type:  Учеба
-record_type_r:  Учеба
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Изучение настройки VLAN на коммутаторах Zyxel MES-серии.
-Создание VLAN, настройка trunk и access портов.
-Практическая настройка на тестовом коммутаторе в лаборатории.
-Note:  Навыки настройки VLAN Zyxel освоены.
-
-
-t:  
-c:  Профилактика
-date:  10.06.2026
-record_type:  Профилактика
-record_type_r:  Профилактика
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Плановая профилактика оборудования в серверном помещении. Очистка от пыли серверов, коммутаторов и патч-панелей.
-Проверка кабельных соединений в шкафу УК-1. Протирка оборудования снаружи и внутри шкафа.
-Note:  Замечаний не выявлено. Оборудование работает стабильно.
-
-
-t:  
-c:  Текущие работы
-date:  11.06.2026
-record_type:  Текущие работы
-record_type_r:  Текущие работы
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Обновление схемы подключения оборудования в серверном помещении.
-Нанесение маркировки на кабели патч-панели. Обновление документации.
-Внесение изменений в базу данных оборудования.
-Note:  Схема актуализирована и сохранена в базу документов.
-
-
-t:  
-c:  Поездка
-date:  12.06.2026
-record_type:  Поездка
-record_type_r:  Поездка
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  По районам
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Командировка в Ташкент для участия в техническом совещании по модернизации сети.
-Ознакомление с новым оборудованием MAIPU. Получение технической документации.
-Согласование плана работ по модернизации.
-Note:  Протокол совещания получен.
-
-
-t:  
-c:  Отчет
-date:  15.06.2026
-record_type:  Отчет
-record_type_r:  Отчет
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Составление акта проверки состояния активного оборудования на районных узлах.
-Внесение данных о заменённом оборудовании в базу инвентаризации.
-Подготовка заявки на приобретение расходных материалов: куллеры — 6 шт., аккумуляторы — 4 шт.
-Note:  Заявка передана на утверждение руководству.
-
-
-t:  
-c:  Профилактика
-date:  16.06.2026
-record_type:  Профилактика
-record_type_r:  Профилактика
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Замена аккумуляторов ИБП в узле SIR-766 (Сайхунабад) — 3 шт. 12В 7А.
-Составлен акт монтажа/демонтажа оборудования. Акт внесён в базу документов.
-Проверка времени удержания нагрузки: 25 минут — норма.
-Note:  Акт подписан и заархивирован.
-
-
-t:  
-c:  Настройка
-date:  17.06.2026
-record_type:  Настройка
-record_type_r:  Настройка
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Установка и настройка нового коммутатора ES-3500 в узле SIR-764 (Навруз телеком).
-Перенос конфигурации с ES-2108. Подключение абонентов, проверка связи.
-Составлен акт монтажа оборудования.
-Note:  Оборудование введено в эксплуатацию.
-
-
-t:  
-c:  Профилактика
-date:  18.06.2026
-record_type:  Профилактика
-record_type_r:  Профилактика
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Замена вышедшего из строя вентилятора в шкафу узла SIR-765 (Пахтаабад).
-Установка нового вентилятора 120мм. Проверка воздухообмена.
-Температура в шкафу снизилась с 38°C до 28°C.
-Note:  Замена произведена, оборудование работает нормально.
-
-
-t:  
-c:  Учеба
-date:  19.06.2026
-record_type:  Учеба
-record_type_r:  Учеба
-Executor:  Холбеков.Г.Т.
-mail_node_name:  
-mail_node_name_r:  
-node_number:  
-node_param:  
-abonent_name:  
-res_data:  
-model_hardware:  
-inventar:  
-adv_param_name2:  
-inventar_1:  
-port:  
-time_no_work:  
-adv_param_name_3:  
-category:  нет
-node_name:  
-node_location:  
-adv_param_label:  
-adv_param_name:  
-adv_param_label_2:  
-adv_param_name2_r:  
-adv_param_label_3:  
-adv_param_name_3_r:  
-$UpdatedBy:  CN=tech10/O=Guli
-
-Events:  Изучение протокола STP (Spanning Tree Protocol) и его модификаций RSTP, MSTP.
-Практика в Packet Tracer: построение отказоустойчивой коммутируемой сети.
-Проверка работы резервных каналов при отказе основного.
-Note:  Топология с STP настроена корректно.
 
 
