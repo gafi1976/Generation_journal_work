@@ -449,12 +449,9 @@ while current <= end:
 print(f'Сгенерировано записей: {len(blocks)}')
 
 # ─── Сборка итогового файла ───────────────────────────────────
-SEPARATOR = '\x0c' + CRLF
-pieces = [blocks[0]]
-for block in blocks[1:]:
-    pieces.append(CRLF + block)
+SEP = CRLF + '\x0c' + CRLF   # \r\n\x0c\r\n — точно как в оригинале
 
-final_text = SEPARATOR.join(pieces) + CRLF + '\x0c' + CRLF + CRLF
+final_text = SEP.join(blocks) + CRLF + '\x0c' + CRLF
 
 with open(OUTPUT_FILE, 'wb') as f:
     f.write(final_text.encode(ENCODING))
