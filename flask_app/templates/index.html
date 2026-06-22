@@ -75,6 +75,19 @@
                border-radius:4px;padding:3px 8px;font-size:.75rem}
 
   @media(max-width:600px){.row{flex-direction:column}}
+
+  /* Вкладки */
+  .tabs{display:flex;gap:4px;margin-bottom:-1px;z-index:1;position:relative}
+  .tab-btn{padding:10px 22px;border:1px solid #cbd5e0;border-bottom:none;
+           border-radius:8px 8px 0 0;background:#f7fbff;color:#4a5568;
+           cursor:pointer;font-size:.88rem;font-weight:500;transition:all .2s}
+  .tab-btn.active{background:#fff;color:#2b6cb0;border-color:#bee3f8;
+                  border-bottom:1px solid #fff;font-weight:600}
+  .tab-btn:hover:not(.active){background:#ebf8ff}
+  .tab-pane{display:none}.tab-pane.active{display:block}
+  .tab-wrap{border:1px solid #bee3f8;border-radius:0 10px 10px 10px;
+            padding:0;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.1)}
+
 </style>
 </head>
 <body>
@@ -83,6 +96,21 @@
   <p>Генерация рабочих дней с учётом праздников Узбекистана</p>
 </div>
 <div class="container">
+
+<!-- ═══ Вкладки ═══════════════════════════════════════════════ -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('journal',this)">
+    📋 Журнал / Jurnal
+  </button>
+  <button class="tab-btn" onclick="switchTab('plan',this)">
+    📅 План работы / Yillik reja
+  </button>
+</div>
+<div class="tab-wrap">
+
+<!-- ─── Вкладка 1: Журнал ──────────────────────────────────── -->
+<div id="tab-journal" class="tab-pane active">
+
 
 <!-- Период и исполнители -->
 <div class="card">
@@ -192,7 +220,72 @@
   <div id="status"></div>
 </div>
 
-</div><!-- /container -->
+
+</div><!-- /tab-journal -->
+
+<!-- ─── Вкладка 2: Годовой план ───────────────────────────── -->
+<div id="tab-plan" class="tab-pane">
+  <div class="card">
+    <h2>📅 Yillik ish rejasini yaratish / Создание годового плана работы</h2>
+
+    <!-- Файл обязанностей -->
+    <div class="card" style="background:#f7fbff;box-shadow:none;border:1px solid #bee3f8;margin-bottom:16px">
+      <h2 style="margin-bottom:12px">📂 Funksional majburiyatlar fayli / Файл функциональных обязанностей</h2>
+      <div class="upload-zone" id="duties-zone"
+           onclick="document.getElementById('duties-input').click()"
+           ondragover="event.preventDefault();this.classList.add('drag')"
+           ondragleave="this.classList.remove('drag')"
+           ondrop="handleDutiesDrop(event)">
+        <input type="file" id="duties-input" accept=".txt" onchange="handleDutiesFile(this)">
+        <div class="upload-icon">📄</div>
+        <div class="upload-text">
+          Нажмите или перетащите <b>.txt</b> файл обязанностей<br>
+          <small style="color:#718096">Funksional majburiyatlar .txt faylini yuklang</small>
+        </div>
+        <div class="upload-name" id="duties-name">Файл не выбран / Fayl tanlanmagan</div>
+      </div>
+      <p class="hint" style="margin-top:8px">
+        ⚠ Если файл не загружен — план генерируется по стандартным обязанностям системного администратора.<br>
+        Agar fayl yuklanmasa — standart muhandis majburiyatlari asosida reja tuziladi.
+      </p>
+    </div>
+
+    <!-- Параметры -->
+    <div class="row" style="margin-bottom:16px">
+      <div class="field">
+        <label>Йил / Год</label>
+        <select id="plan_year" style="max-width:160px">
+          <option value="2025">2025</option>
+          <option value="2026" selected>2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Тил / Язык</label>
+        <select id="plan_lang" style="max-width:260px">
+          <option value="uz">🇺🇿 O'zbekcha (lotin)</option>
+          <option value="ru">🇷🇺 Русский</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Исполнитель / Ijrochi (необязательно)</label>
+        <input type="text" id="plan_executor" placeholder="Xolbekov G'.T." style="max-width:260px">
+      </div>
+    </div>
+
+    <button class="btn-gen" id="btn-plan" onclick="generatePlan()">
+      📅 Режа тузиш / Создать план работы
+    </button>
+    <div id="status-plan"></div>
+  </div>
+</div><!-- /tab-plan -->
+
+</div><!-- /tab-wrap -->
+
+</div><!-- /container --><!-- /container -->
 
 <script>
 let templateFile = null;
@@ -334,6 +427,71 @@ async function generate(){
   }
   btn.disabled = false;
 }
+
+// ── Вкладки ──────────────────────────────────────────────────────
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── Файл обязанностей ────────────────────────────────────────────
+let dutiesFile = null;
+function handleDutiesFile(input) {
+  if (input.files[0]) {
+    dutiesFile = input.files[0];
+    document.getElementById('duties-name').textContent = '✅ ' + dutiesFile.name;
+    document.getElementById('duties-zone').classList.add('drag');
+    setTimeout(() => document.getElementById('duties-zone').classList.remove('drag'), 400);
+  }
+}
+function handleDutiesDrop(e) {
+  e.preventDefault();
+  document.getElementById('duties-zone').classList.remove('drag');
+  const f = e.dataTransfer.files[0];
+  if (f) { document.getElementById('duties-input').files = e.dataTransfer.files; handleDutiesFile(document.getElementById('duties-input')); }
+}
+
+// ── Генерация плана ──────────────────────────────────────────────
+function showStatusPlan(msg, type) {
+  const el = document.getElementById('status-plan');
+  el.textContent = msg;
+  el.className = 'status-' + type;
+  el.style.display = 'block';
+}
+
+async function generatePlan() {
+  const year = document.getElementById('plan_year').value;
+  const lang = document.getElementById('plan_lang').value;
+  const exec = document.getElementById('plan_executor').value.trim();
+
+  const btn = document.getElementById('btn-plan');
+  btn.disabled = true;
+  showStatusPlan('⏳ Генерация плана...', 'info');
+
+  const fd = new FormData();
+  fd.append('plan_year', year);
+  fd.append('plan_lang', lang);
+  if (exec) fd.append('plan_executor', exec);
+  if (dutiesFile) fd.append('duties_file', dutiesFile);
+
+  try {
+    const resp = await fetch('/plan', { method: 'POST', body: fd });
+    if (!resp.ok) { showStatusPlan('❌ ' + (await resp.text()), 'err'); btn.disabled=false; return; }
+    const blob = await resp.blob();
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = 'plan_' + year + '.txt'; a.click();
+    URL.revokeObjectURL(url);
+    const src = dutiesFile ? 'fayl asosida' : 'standart asosida';
+    showStatusPlan('✅ Tayyor! plan_' + year + '.txt yuklanди (' + src + ')', 'ok');
+  } catch(e) {
+    showStatusPlan('❌ ' + e.message, 'err');
+  }
+  btn.disabled = false;
+}
+
 </script>
 </body>
 </html>

@@ -3142,6 +3142,434 @@ def generate():
         return str(e), 500
 
 
+
+
+# ══════════════════════════════════════════════════════════════════
+# Функции генератора годового плана работы
+# ══════════════════════════════════════════════════════════════════
+
+def parse_duties(file_bytes: bytes) -> dict:
+    """
+    Парсит .txt файл функциональных обязанностей.
+    Возвращает словарь с секциями: title, duties[], knowledge[], profilaktika[], rights[], responsibility[].
+    Поддерживает cp1252, cp1251, utf-8.
+    """
+    for enc in ('utf-8', 'cp1252', 'cp1251', 'latin-1'):
+        try:
+            text = file_bytes.decode(enc)
+            break
+        except Exception:
+            continue
+
+    lines = [l.strip() for l in text.replace('\r\n', '\n').replace('\r', '\n').split('\n')]
+
+    result = {
+        'title':          '',
+        'executor':       '',
+        'duties':         [],
+        'knowledge':      [],
+        'profilaktika':   [],
+        'rights':         [],
+        'responsibility': [],
+        'raw':            text,
+    }
+
+    current_section = None
+    title_lines = []
+
+    for line in lines:
+        if not line:
+            continue
+        low = line.lower()
+
+        # Определяем секцию
+        if 'funksional majburiyat' in low or 'funktsional' in low:
+            current_section = 'duties'
+            continue
+        if any(k in low for k in ('bilishi kerak', "ma'lumot", 'bilimlar')):
+            current_section = 'knowledge'
+            continue
+        if 'profilaktika' in low:
+            current_section = 'profilaktika'
+            continue
+        if 'xuquq' in low or 'hquq' in low or 'rights' in low:
+            current_section = 'rights'
+            continue
+        if 'javobgarlik' in low or 'responsibility' in low:
+            current_section = 'responsibility'
+            continue
+        if 'umumiy qism' in low:
+            current_section = 'duties'
+            continue
+
+        # Заголовок (до первой секции)
+        if current_section is None:
+            title_lines.append(line)
+            if 'xolbekov' in low or 'muhandis' in low:
+                # Берём только имя — убираем "MUHANDISI" и лишние слова
+                import re as _re
+                name_match = _re.search(r'XOLBEKOV\s+\S+', line, _re.I)
+                result['executor'] = name_match.group(0).title() if name_match else line
+            continue
+
+        # Строки-пункты (начинаются с цифры или буллита)
+        is_point = (
+            line[:1].isdigit() or
+            line.startswith('-') or
+            line.startswith('•') or
+            (len(line) > 2 and line[1] in '.)')
+        )
+        if is_point or (current_section and len(line) > 10):
+            # Чистим номера типа "1.1.2 " "3.1.1."
+            import re
+            clean = re.sub(r'^[\d\.]+\s*', '', line).strip()
+            if clean and len(clean) > 8:
+                result[current_section].append(clean)
+
+    result['title'] = ' / '.join(title_lines[:3]) if title_lines else 'Funksional majburiyatlar'
+    return result
+
+
+# ── Шаблоны месяцев (RU / UZ) ────────────────────────────────────
+
+_MONTHS_RU = [
+    'ЯНВАРЬ', 'ФЕВРАЛЬ', 'МАРТ', 'АПРЕЛЬ', 'МАЙ', 'ИЮНЬ',
+    'ИЮЛЬ', 'АВГУСТ', 'СЕНТЯБРЬ', 'ОКТЯБРЬ', 'НОЯБРЬ', 'ДЕКАБРЬ',
+]
+_MONTHS_UZ = [
+    'YANVAR', 'FEVRAL', 'MART', 'APREL', 'MAY', 'IYUN',
+    'IYUL', 'AVGUST', 'SENTABR', 'OKTABR', 'NOYABR', 'DEKABR',
+]
+
+# Праздники Узбекистана по месяцам (для пометки)
+_HOLIDAYS_BY_MONTH = {
+    1:  ["1-yanvar — Yangi yil / 1 января — Новый год",
+         "14-yanvar — Vatan himoyachilari kuni / 14 января — День защитников"],
+    3:  ["8-mart — Xotin-qizlar kuni / 8 марта — День женщин",
+         "21-mart — Navro'z / 21 марта — Навруз"],
+    5:  ["9-may — Xotira va qadrlash kuni / 9 мая — День памяти и почестей"],
+    9:  ["1-sentabr — Mustaqillik kuni / 1 сентября — День независимости"],
+    10: ["1-oktabr — O'qituvchilar kuni / 1 октября — День учителей"],
+    12: ["8-dekabr — Konstitutsiya kuni / 8 декабря — День Конституции"],
+}
+
+# Фиксированные задачи по кварталам
+_QUARTERLY_RU = {
+    3:  "Подвести итоги I квартала: uptime, инциденты, выполнение плана.",
+    6:  "Подвести итоги II квартала. Составить полугодовой отчёт.",
+    9:  "Подвести итоги III квартала. Анализ инцидентов.",
+    12: "Подвести итоги года. Составить годовой отчёт. Передать на хранение.",
+}
+_QUARTERLY_UZ = {
+    3:  "I chorak yakuni: uptime, insidentlar, ish rejasi bajarilishi tahlili.",
+    6:  "II chorak yakuni. Yarim yillik hisobot tuzish va topshirish.",
+    9:  "III chorak yakuni. Insidentlarni tahlil qilish va xulosalar.",
+    12: "Yil yakuni. Yillik hisobot tuzish. Arxivlash va topshirish.",
+}
+
+# Узлы для профилактики
+_NODES = [
+    "SIR-751 (Guliston telekom)",
+    "SIR-761 (Dehqonobod)", "SIR-762 (Bayaut)", "SIR-764 (Navruz)",
+    "SIR-765 (Paxtaobod)", "SIR-766 (Sayhunobod)", "SIR-767 (Sardoba)",
+    "SIR-768 (Sirdaryo)", "SIR-769 (Xavast)", "SIR-770 (Shirin)",
+    "SIR-771 (Yangiyer)",
+]
+
+# Темы для повышения квалификации (12 месяцев)
+_STUDY_RU = [
+    "OSPF протокол — настройка и практика в Cisco Packet Tracer.",
+    "HSRP/VRRP — отказоустойчивые шлюзы, практика.",
+    "VPN IPSec Site-to-Site — настройка туннеля.",
+    "BGP протокол — основы и практика в GNS3.",
+    "Linux администрирование — скрипты, iptables, cron.",
+    "Cisco CCNA 200-301 — ACL, Wireless, подготовка к сертификации.",
+    "VMware vSphere — виртуализация, снапшоты, vSwitch.",
+    "Wireshark — диагностика сети, анализ пакетов.",
+    "Zabbix 6.x — мониторинг, SNMP, триггеры, дашборды.",
+    "Windows Server 2025 — новые возможности, AD, Hyper-V.",
+    "Lotus Notes Domino Designer — агенты, LotusScript.",
+    "Кибербезопасность — Firewall, IDS/IPS, Zero Trust.",
+]
+_STUDY_UZ = [
+    "OSPF protokoli — Cisco Packet Tracer da sozlash va amaliyot.",
+    "HSRP/VRRP — yuqori mavjudlikli shlyuzlar, amaliyot.",
+    "VPN IPSec Site-to-Site — tunel sozlash amaliyoti.",
+    "BGP protokoli — asoslar va GNS3 da amaliyot.",
+    "Linux ma'murchiligi — skriptlar, iptables, cron vazifalar.",
+    "Cisco CCNA 200-301 — ACL, Wireless, sertifikatsiyaga tayyorlik.",
+    "VMware vSphere — virtualizatsiya, snapshot, vSwitch.",
+    "Wireshark — tarmoq diagnostikasi, paketlarni tahlil.",
+    "Zabbix 6.x — monitoring, SNMP, trigger, dashboard.",
+    "Windows Server 2025 — yangi imkoniyatlar, AD, Hyper-V.",
+    "Lotus Notes Domino Designer — agentlar, LotusScript.",
+    "Kiber xavfsizlik — Firewall, IDS/IPS, Zero Trust.",
+]
+
+
+def _extract_duties_text(duties_info: dict, lang: str) -> list:
+    """Формирует список задач из функциональных обязанностей для конкретного месяца."""
+    tasks = []
+    all_duties = (
+        duties_info.get('duties', []) +
+        duties_info.get('profilaktika', []) +
+        duties_info.get('knowledge', [])
+    )
+    # Берём первые 5 значимых пунктов
+    for d in all_duties[:5]:
+        if len(d) > 15:
+            tasks.append(d[:120])
+    return tasks
+
+
+def generate_plan(year: int, lang: str, duties_info: dict) -> bytes:
+    """
+    Генерирует текстовый файл годового плана работы.
+    year        -- год плана
+    lang        -- 'ru' или 'uz'
+    duties_info -- результат parse_duties()
+    """
+    months  = _MONTHS_UZ if lang == 'uz' else _MONTHS_RU
+    study   = _STUDY_UZ  if lang == 'uz' else _STUDY_RU
+    quarter = _QUARTERLY_UZ if lang == 'uz' else _QUARTERLY_RU
+
+    executor  = duties_info.get('executor', "Xolbekov G'.T.")
+    org_title = duties_info.get('title', 'FUNKSIONAL MAJBURIYATLAR')
+
+    SEP  = '=' * 65
+    SEP2 = '-' * 65
+
+    out = []
+
+    # ── Шапка ────────────────────────────────────────────────────
+    out.append(org_title.upper())
+    out.append('')
+    if lang == 'uz':
+        out.append(str(year) + " YILGA MO'LJALLANGAN YILLIK ISH REJASI")
+        out.append('')
+        out.append('Tuzuvchi    : ' + executor)
+        out.append('Lavozim     : Yetakchi muhandis')
+        out.append('Tasdiqlagan : ____________________________')
+        out.append('Sana        : "___" ___________ ' + str(year) + ' yil')
+    else:
+        out.append('ГОДОВОЙ ПЛАН РАБОТЫ НА ' + str(year) + ' ГОД')
+        out.append('')
+        out.append('Составитель : ' + executor)
+        out.append('Должность   : Ведущий инженер')
+        out.append('Утверждено  : ____________________________')
+        out.append('Дата        : "___" ___________ ' + str(year) + ' года')
+    out.append('')
+    out.append(SEP)
+
+    # ── Группы узлов для профилактики ───────────────────────────
+    node_groups = [_NODES[:4], _NODES[4:8], _NODES[8:]]
+
+    # ── Месяцы ───────────────────────────────────────────────────
+    for m_idx, month_name in enumerate(months, 1):
+        out.append('')
+        if lang == 'uz':
+            out.append(month_name + ' OYI ' + str(year))
+        else:
+            out.append(month_name + ' ' + str(year))
+        out.append(SEP2)
+
+        t = 1  # номер задачи
+
+        # 1. Составить план месяца
+        if lang == 'uz':
+            out.append(str(t) + ". Oy ish rejasini tuzish va bo'lim boshlig'i bilan kelishish.")
+        else:
+            out.append(str(t) + '. Составить план работы на месяц и согласовать с руководителем.')
+        t += 1
+
+        # 2. Электросчётчики
+        grp = ', '.join(node_groups[(m_idx - 1) % 3])
+        if lang == 'uz':
+            out.append(str(t) + ". Elektr hisoblagich ko'rsatkichlarini olish: " + grp +
+                       ". Reestр tuzish va telekомга topshirish.")
+        else:
+            out.append(str(t) + '. Снять показания электросчётчиков: ' + grp +
+                       '. Составить реестр и передать в телеком.')
+        t += 1
+
+        # 3. Профилактика
+        idx_s = (m_idx - 1) * 2 % len(_NODES)
+        prof_nodes = ', '.join(_NODES[idx_s:idx_s + 3])
+        if lang == 'uz':
+            out.append(str(t) + '. Rejalashtirilgan profilaktika: ' + prof_nodes +
+                       '. Uskunalarni changdan tozalash, UPS va gullar tekshiruvi.')
+        else:
+            out.append(str(t) + '. Плановое ТО: ' + prof_nodes +
+                       '. Очистка от пыли, проверка UPS и вентиляторов.')
+        t += 1
+
+        # 4. Резервное копирование конфигов
+        cfg_path = '/Config/' + str(year) + '-' + str(m_idx).zfill(2) + '/'
+        if lang == 'uz':
+            out.append(str(t) + '. Barcha faol uskunalar konfiguratsiyalarini zaxiralash (' +
+                       cfg_path + ' katalogiga).')
+        else:
+            out.append(str(t) + '. Резервное копирование конфигураций всех устройств (каталог ' +
+                       cfg_path + ').')
+        t += 1
+
+        # 5. Lotus Notes
+        if lang == 'uz':
+            out.append(str(t) + ". Lotus Notes tizimini tekshirish: foydalanuvchilar kvotasi,"
+                       " sertifikatlar muddati, pochta navbati holati.")
+        else:
+            out.append(str(t) + '. Техническое обслуживание Lotus Notes: квоты,'
+                       ' сертификаты пользователей, состояние почтовой очереди.')
+        t += 1
+
+        # 6. Мониторинг
+        if lang == 'uz':
+            out.append(str(t) + ". Dude monitoring tizimi orqali barcha uzellar mavjudligini"
+                       " nazorat qilish. Insidentlarni jurnalga qayd etish.")
+        else:
+            out.append(str(t) + '. Контроль доступности узлов через мониторинг Dude.'
+                       ' Фиксация инцидентов в журнале.')
+        t += 1
+
+        # 7. Повышение квалификации
+        topic = study[(m_idx - 1) % len(study)]
+        if lang == 'uz':
+            out.append(str(t) + '. Malaka oshirish: ' + topic)
+        else:
+            out.append(str(t) + '. Повышение квалификации: ' + topic)
+        t += 1
+
+        # 8. Квартальный итог
+        if m_idx in quarter:
+            out.append(str(t) + '. ' + quarter[m_idx])
+            t += 1
+
+        # 9. Пункты из файла обязанностей
+        extra = _extract_duties_text(duties_info, lang)
+        for d in extra[:2]:
+            out.append(str(t) + '. ' + d)
+            t += 1
+
+        # 10. Праздники
+        if m_idx in _HOLIDAYS_BY_MONTH:
+            tag = '[Bayram]' if lang == 'uz' else '[Праздник]'
+            out.append('   ' + tag + ' ' + ' | '.join(_HOLIDAYS_BY_MONTH[m_idx]))
+
+        # 11. Отчёт
+        if lang == 'uz':
+            out.append(str(t) + ". Oy oxirida hisobot tuzish va bo'lim boshlig'iga topshirish.")
+        else:
+            out.append(str(t) + '. В конце месяца составить отчёт и сдать руководителю.')
+
+    # ── Постоянные обязанности ────────────────────────────────────
+    out.append('')
+    out.append(SEP)
+    if lang == 'uz':
+        out.append("HAR OY BAJARILISHI SHART BO'LGAN DOIMIY VAZIFALAR:")
+        out.append('')
+        out.append("1. Oylik ish rejasini tuzish va bo'lim boshlig'i bilan kelishish.")
+        out.append("2. Barcha tuман uzellar bo'yicha elektr hisoblagich ko'rsatkichlarini olish.")
+        out.append('3. Administrator jurnaliga har kuni bajarilgan ishlarni qayd etib borish.')
+        out.append('4. Tarmoq monitoring (Dude) orqali uzluksiz nazorat.')
+        out.append("5. Insidentlar bo'lganda: bo'lim boshlig'ini xabardor qilish va bartaraf etish.")
+        out.append("6. Foydalanuvchi arizalarini bajarish (Lotus Notes, tarmoq).")
+        out.append("7. Oy oxirida hisobot tuzish va topshirish.")
+    else:
+        out.append('ПОСТОЯННЫЕ ЕЖЕМЕСЯЧНЫЕ ОБЯЗАННОСТИ:')
+        out.append('')
+        out.append('1. Составлять план работы на месяц и согласовывать с руководством.')
+        out.append('2. Снимать показания счётчиков по всем районным узлам.')
+        out.append('3. Ежедневно вести записи в журнале администратора.')
+        out.append('4. Непрерывный мониторинг сети через систему Dude.')
+        out.append('5. При инцидентах: оповещать руководителя и устранять неисправности.')
+        out.append('6. Принимать и выполнять заявки пользователей (Lotus Notes, сеть).')
+        out.append('7. В конце месяца составлять и сдавать отчёт.')
+
+    # ── Целевые показатели ────────────────────────────────────────
+    out.append('')
+    out.append(SEP)
+    if lang == 'uz':
+        out.append('YIL UCHUN ASOSIY MAQSADLI ' + "KO'RSATKICHLAR (" + str(year) + '):')
+        out.append('')
+        out.append("- Tarmoq mavjudligi (uptime)         : 99.5% dan kam bo'lmasligi")
+        out.append('- Rejalashtirilgan profilaktika       : 100% bajarilishi')
+        out.append("- Insidentlarga o'rtacha javob vaqti  : 2 soatdan oshmasligi")
+        out.append('- Administrator jurnali               : har kuni to\'ldirilishi')
+        out.append('- Oylik hisobotlar muddati            : har oyning oxirgi ish kuni')
+        out.append('- Malaka oshirish                     : yiliga kamida 1 ta yangi texnologiya')
+    else:
+        out.append('ЦЕЛЕВЫЕ ПОКАЗАТЕЛИ НА ' + str(year) + ' ГОД:')
+        out.append('')
+        out.append('- Доступность сети (uptime)           : не менее 99.5%')
+        out.append('- Выполнение плановых ТО              : 100%')
+        out.append('- Среднее время устранения инцидента  : не более 2 часов')
+        out.append('- Ведение журнала администратора      : ежедневно')
+        out.append('- Сдача ежемесячных отчётов           : последний рабочий день месяца')
+        out.append('- Повышение квалификации              : не менее 1 новой технологии в год')
+
+    out.append('')
+    out.append(SEP)
+    out.append('')
+    if lang == 'uz':
+        out.append('    Yetakchi muhandis : ' + executor)
+        out.append("    Bo'lim boshlig'i  : ______________________________")
+        out.append('    Tasdiqlangan      : "___" ___________ ' + str(year) + ' yil')
+    else:
+        out.append('    Ведущий инженер   : ' + executor)
+        out.append('    Руководитель отд. : ______________________________')
+        out.append('    Утверждено        : "___" ___________ ' + str(year) + ' года')
+
+    return '\n'.join(out).encode('utf-8')
+
+
+# ══════════════════════════════════════════════════════════════════
+# Маршрут /plan — генерация годового плана
+# ══════════════════════════════════════════════════════════════════
+
+@app.route('/plan', methods=['POST'])
+def plan():
+    """Генерирует годовой план работы на основе файла обязанностей."""
+    try:
+        year_str = request.form.get('plan_year', '').strip()
+        lang     = request.form.get('plan_lang', 'uz').strip()
+        try:
+            year = int(year_str)
+            if not (2020 <= year <= 2035):
+                raise ValueError
+        except ValueError:
+            return 'Некорректный год. Допустимо: 2020–2035', 400
+
+        # Читаем файл обязанностей
+        duties_info = {}
+        if 'duties_file' in request.files:
+            f = request.files['duties_file']
+            if f and f.filename:
+                duties_info = parse_duties(f.read())
+
+        out_bytes = generate_plan(year, lang, duties_info)
+        # Если пользователь вручную указал исполнителя — перезаписываем
+        custom_exec = request.form.get('plan_executor', '').strip()
+        if custom_exec and duties_info:
+            duties_info['executor'] = custom_exec
+            out_bytes = generate_plan(year, lang, duties_info)
+        elif custom_exec:
+            duties_info = {'executor': custom_exec}
+            out_bytes = generate_plan(year, lang, duties_info)
+        out_name  = f'plan_{year}.txt'
+
+        buf = io.BytesIO(out_bytes)
+        buf.seek(0)
+        return send_file(
+            buf,
+            as_attachment=True,
+            download_name=out_name,
+            mimetype='text/plain; charset=utf-8',
+        )
+
+    except Exception as e:
+        return str(e), 500
+
+
 # ══════════════════════════════════════════════════════════════════
 # Запуск напрямую (для разработки)
 # ══════════════════════════════════════════════════════════════════
