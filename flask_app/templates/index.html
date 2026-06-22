@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Генератор журнала Lotus Notes</title>
+  <!-- Flask version -->
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#2d3748;min-height:100vh}
+  .header{background:linear-gradient(135deg,#1a365d,#2b6cb0);color:#fff;padding:22px 32px;
+          box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .header h1{font-size:1.5rem;font-weight:600;letter-spacing:.3px}
+  .header p{font-size:.85rem;opacity:.8;margin-top:4px}
+  .container{max-width:900px;margin:28px auto;padding:0 16px}
+  .card{background:#fff;border-radius:10px;padding:24px 28px;margin-bottom:20px;
+        box-shadow:0 1px 6px rgba(0,0,0,.1)}
+  .card h2{font-size:1rem;font-weight:600;color:#2b6cb0;margin-bottom:16px;
+           padding-bottom:8px;border-bottom:2px solid #ebf8ff}
+  .row{display:flex;gap:16px;flex-wrap:wrap}
+  .field{flex:1;min-width:200px;display:flex;flex-direction:column;gap:5px}
+  label{font-size:.82rem;font-weight:500;color:#4a5568}
+  input[type=text],input[type=date],select,textarea{
+    border:1px solid #cbd5e0;border-radius:6px;padding:8px 10px;
+    font-size:.88rem;width:100%;outline:none;transition:border .2s}
+  input:focus,select:focus,textarea:focus{border-color:#3182ce;
+    box-shadow:0 0 0 3px rgba(49,130,206,.15)}
+  textarea{resize:vertical;min-height:72px;font-family:inherit}
+  .hint{font-size:.75rem;color:#718096;margin-top:2px}
+
+  /* Upload zone */
+  .upload-zone{border:2px dashed #bee3f8;border-radius:8px;padding:20px;
+               text-align:center;cursor:pointer;transition:all .2s;background:#f7fbff}
+  .upload-zone:hover,.upload-zone.drag{border-color:#3182ce;background:#ebf8ff}
+  .upload-zone input{display:none}
+  .upload-icon{font-size:2rem;margin-bottom:6px}
+  .upload-text{font-size:.85rem;color:#4a5568}
+  .upload-name{font-size:.8rem;color:#3182ce;margin-top:6px;font-weight:500}
+
+  /* Special days table */
+  #special-table{width:100%;border-collapse:collapse;font-size:.82rem}
+  #special-table th{background:#ebf8ff;color:#2b6cb0;padding:8px 10px;
+                     text-align:left;font-weight:600;border-bottom:2px solid #bee3f8}
+  #special-table td{padding:6px 8px;border-bottom:1px solid #f0f4f8;vertical-align:top}
+  #special-table tr:hover td{background:#f7fbff}
+  #special-table input,#special-table select,#special-table textarea{
+    border:1px solid #e2e8f0;padding:5px 7px;font-size:.8rem;border-radius:4px;width:100%}
+  .btn-add{background:#ebf8ff;color:#2b6cb0;border:1px solid #bee3f8;
+           border-radius:6px;padding:7px 16px;cursor:pointer;font-size:.82rem;
+           font-weight:500;transition:all .2s}
+  .btn-add:hover{background:#bee3f8}
+  .btn-del{background:none;border:none;color:#e53e3e;cursor:pointer;
+           font-size:1rem;padding:2px 6px;border-radius:4px}
+  .btn-del:hover{background:#fff5f5}
+
+  /* Generate button */
+  .btn-gen{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#2b6cb0,#1a365d);
+           color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;
+           cursor:pointer;transition:all .2s;letter-spacing:.3px}
+  .btn-gen:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(43,108,176,.4)}
+  .btn-gen:active{transform:translateY(0)}
+  .btn-gen:disabled{background:#a0aec0;cursor:not-allowed;transform:none;box-shadow:none}
+
+  /* Status */
+  #status{padding:12px 16px;border-radius:8px;font-size:.88rem;display:none;margin-top:12px}
+  .status-ok{background:#f0fff4;color:#276749;border:1px solid #c6f6d5}
+  .status-err{background:#fff5f5;color:#c53030;border:1px solid #fed7d7}
+  .status-info{background:#ebf8ff;color:#2b6cb0;border:1px solid #bee3f8}
+
+  /* Holidays reference */
+  details{margin-top:8px}
+  summary{cursor:pointer;font-size:.8rem;color:#718096;user-select:none}
+  .holidays-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .holiday-tag{background:#fff5f5;color:#c53030;border:1px solid #fed7d7;
+               border-radius:4px;padding:3px 8px;font-size:.75rem}
+
+  @media(max-width:600px){.row{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📋 Генератор журнала Lotus Notes</h1>
+  <p>Генерация рабочих дней с учётом праздников Узбекистана</p>
+</div>
+<div class="container">
+
+<!-- Период и исполнители -->
+<div class="card">
+  <h2>⚙️ Параметры генерации</h2>
+  <div class="row">
+    <div class="field">
+      <label>Период с</label>
+      <input type="date" id="date_from" value="2024-07-01">
+    </div>
+    <div class="field">
+      <label>Период по</label>
+      <input type="date" id="date_to" value="2026-06-19">
+    </div>
+  </div>
+  <div class="row" style="margin-top:14px">
+    <div class="field">
+      <label>Исполнитель 1</label>
+      <input type="text" id="exec1" value="Холбеков.Г.Т." placeholder="Фамилия.И.О.">
+    </div>
+    <div class="field">
+      <label>Исполнитель 2 (необязательно)</label>
+      <input type="text" id="exec2" value="Рахматов В.А." placeholder="Фамилия.И.О.">
+    </div>
+  </div>
+  <div class="row" style="margin-top:14px">
+    <div class="field">
+      <label>$UpdatedBy</label>
+      <input type="text" id="updated_by" value="CN=tech10/O=Guli">
+    </div>
+    <div class="field">
+      <label>Имя выходного файла</label>
+      <input type="text" id="out_filename" value="jurnal_import.txt">
+    </div>
+  </div>
+  <div class="row" style="margin-top:14px">
+    <div class="field">
+      <label>Язык шаблона / Шаблон тили</label>
+      <select id="lang_select" onchange="setLang(this.value)" style="max-width:260px">
+        <option value="ru">🇷🇺 Русский</option>
+        <option value="uz">🇺🇿 Ўзбекча (кирилл)</option>
+      </select>
+      <span class="hint">Файл шаблона юкланмаса — танланган тилдаги ички банк ишлатилади</span>
+    </div>
+  </div>
+  <details style="margin-top:14px">
+    <summary>📅 Праздники Узбекистана (исключаются автоматически)</summary>
+    <div class="holidays-grid">
+      <span class="holiday-tag">1 янв — Янги йил</span>
+      <span class="holiday-tag">14 янв — Ватан ҳимоячилари куни</span>
+      <span class="holiday-tag">8 март — Хотин-қизлар куни</span>
+      <span class="holiday-tag">21 март — Наврўз</span>
+      <span class="holiday-tag">Рамазон ҳайити</span>
+      <span class="holiday-tag">9 май — Хотира ва қадрлаш куни</span>
+      <span class="holiday-tag">Қурбон ҳайити</span>
+      <span class="holiday-tag">1 сент — Мустақиллик куни</span>
+      <span class="holiday-tag">1 окт — Ўқитувчилар куни</span>
+      <span class="holiday-tag">8 дек — Конституция куни</span>
+    </div>
+  </details>
+</div>
+
+<!-- Шаблон -->
+<div class="card">
+  <h2>📂 Файл шаблона</h2>
+  <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()"
+       ondragover="event.preventDefault();this.classList.add('drag')"
+       ondragleave="this.classList.remove('drag')"
+       ondrop="handleDrop(event)">
+    <input type="file" id="file-input" accept=".txt" onchange="handleFile(this)">
+    <div class="upload-icon">📄</div>
+    <div class="upload-text">Нажмите или перетащите файл <b>jurnal_my.txt</b></div>
+    <div class="upload-name" id="upload-name">Файл не выбран</div>
+  </div>
+  <p class="hint" style="margin-top:8px">
+    Файл экспорта Lotus Notes в кодировке Windows-1251.
+    Записи будут случайно комбинироваться для рабочих дней без особого содержания.
+  </p>
+</div>
+
+<!-- Особые дни -->
+<div class="card">
+  <h2>✏️ Особые дни (вводятся вручную)</h2>
+  <p class="hint" style="margin-bottom:12px">
+    Заполните поле «Событие» — этот день не будет комбинироваться из шаблона.
+    Если поле пустое — день берётся из шаблона автоматически.
+  </p>
+  <table id="special-table">
+    <thead>
+      <tr>
+        <th style="width:130px">Дата</th>
+        <th style="width:160px">Тип записи</th>
+        <th style="width:180px">Исполнитель</th>
+        <th>Событие (Events)</th>
+        <th style="width:160px">Примечание (Note)</th>
+        <th style="width:36px"></th>
+      </tr>
+    </thead>
+    <tbody id="special-body"></tbody>
+  </table>
+  <button class="btn-add" onclick="addRow()" style="margin-top:10px">+ Добавить особый день</button>
+</div>
+
+<!-- Генерация -->
+<div class="card">
+  <h2>🚀 Генерация</h2>
+  <button class="btn-gen" id="btn-gen" onclick="generate()">Создать файл журнала</button>
+  <div id="status"></div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+let templateFile = null;
+const RECORD_TYPES_RU = [
+  'Настройка','Профилактика','Учеба','Работа с организациями',
+  'Текущие работы','Отчет','Поездка'
+];
+const RECORD_TYPES_UZ = [
+  'Созлаш','Профилактика','Таълим','Ташкилотлар билан иш',
+  'Жорий ишлар','Хисобот','Сафар'
+];
+let RECORD_TYPES = RECORD_TYPES_RU;
+
+function setLang(lang) {
+  RECORD_TYPES = lang === 'uz' ? RECORD_TYPES_UZ : RECORD_TYPES_RU;
+  // Обновляем селекты в таблице особых дней
+  document.querySelectorAll('#special-body select').forEach(sel => {
+    const cur = sel.value;
+    sel.innerHTML = RECORD_TYPES.map(t => `<option value="${t}">${t}</option>`).join('');
+    if (RECORD_TYPES.includes(cur)) sel.value = cur;
+  });
+  // Меняем placeholder исполнителя для UZ
+  const e1 = document.getElementById('exec1');
+  const e2 = document.getElementById('exec2');
+  if (lang === 'uz') {
+    e1.value = e1.value === 'Холбеков.Г.Т.' ? 'Холбеков Г.Т.' : e1.value;
+    e2.value = '';
+    e2.disabled = true;
+    e2.placeholder = 'Узбек шаблонида факат 1 та ижрочи';
+  } else {
+    e2.disabled = false;
+    e2.placeholder = 'Фамилия.И.О.';
+  }
+}
+
+function handleFile(input){
+  if(input.files[0]){
+    templateFile = input.files[0];
+    document.getElementById('upload-name').textContent = '✅ ' + templateFile.name;
+    document.getElementById('upload-zone').classList.add('drag');
+    setTimeout(()=>document.getElementById('upload-zone').classList.remove('drag'),400);
+  }
+}
+function handleDrop(e){
+  e.preventDefault();
+  document.getElementById('upload-zone').classList.remove('drag');
+  const f = e.dataTransfer.files[0];
+  if(f){ document.getElementById('file-input').files = e.dataTransfer.files; handleFile(document.getElementById('file-input')); }
+}
+
+function addRow(dateVal='', rtVal='Настройка', execVal='', evVal='', ntVal=''){
+  const tbody = document.getElementById('special-body');
+  const tr = document.createElement('tr');
+  const opts = RECORD_TYPES.map(t=>`<option value="${t}"${t===rtVal?' selected':''}>${t}</option>`).join('');
+  tr.innerHTML = `
+    <td><input type="date" value="${dateVal}"></td>
+    <td><select>${opts}</select></td>
+    <td><input type="text" value="${execVal}" placeholder="Исполнитель"></td>
+    <td><textarea rows="2" placeholder="Описание работ...">${evVal}</textarea></td>
+    <td><textarea rows="2" placeholder="Примечание...">${ntVal}</textarea></td>
+    <td><button class="btn-del" onclick="this.closest('tr').remove()" title="Удалить">✕</button></td>`;
+  tbody.appendChild(tr);
+}
+
+function showStatus(msg, type){
+  const el = document.getElementById('status');
+  el.textContent = msg;
+  el.className = 'status-' + type;
+  el.style.display = 'block';
+}
+
+async function generate(){
+  const dateFrom = document.getElementById('date_from').value;
+  const dateTo   = document.getElementById('date_to').value;
+  const exec1    = document.getElementById('exec1').value.trim();
+  const exec2    = document.getElementById('exec2').value.trim();
+  const updBy    = document.getElementById('updated_by').value.trim();
+  const outName  = document.getElementById('out_filename').value.trim() || 'jurnal_import.txt';
+  const langVal  = document.getElementById('lang_select').value;
+
+  if(!dateFrom || !dateTo){ showStatus('⚠ Укажите период.','err'); return; }
+  if(!exec1){ showStatus('⚠ Укажите хотя бы одного исполнителя.','err'); return; }
+
+  // Собираем особые дни
+  const specRows = document.getElementById('special-body').querySelectorAll('tr');
+  const specialDays = [];
+  specRows.forEach(row => {
+    const cells = row.querySelectorAll('input,select,textarea');
+    const d   = cells[0].value;
+    const rt  = cells[1].value;
+    const exc = cells[2].value.trim();
+    const ev  = cells[3].value.trim();
+    const nt  = cells[4].value.trim();
+    if(d) specialDays.push({date:d, record_type:rt, executor:exc, events:ev, note:nt});
+  });
+
+  const btn = document.getElementById('btn-gen');
+  btn.disabled = true;
+  showStatus('⏳ Генерация...', 'info');
+
+  const formData = new FormData();
+  formData.append('date_from',   dateFrom);
+  formData.append('date_to',     dateTo);
+  formData.append('exec1',       exec1);
+  formData.append('exec2',       exec2);
+  formData.append('updated_by',  updBy);
+  formData.append('lang',        langVal);
+  formData.append('special_days', JSON.stringify(specialDays));
+  if(templateFile) formData.append('template', templateFile);
+
+  try {
+    const resp = await fetch('/generate', {method:'POST', body: formData});
+    if(!resp.ok){
+      const err = await resp.text();
+      showStatus('❌ Ошибка: ' + err, 'err');
+      btn.disabled = false;
+      return;
+    }
+    const blob = await resp.blob();
+    const info = resp.headers.get('X-Info') || '';
+    const recM = info.match(/records=(\d+)/);
+    const tmM  = info.match(/templates=(\d+)/);
+    const srcM = info.match(/source=(\w+)/);
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = outName;
+    a.click();
+    URL.revokeObjectURL(url);
+    const srcLabel = srcM && srcM[1] === 'builtin_uz'
+                     ? 'ўзбек шаблон банки (' + (tmM ? tmM[1] : '?') + ' та)'
+                     : srcM && srcM[1] === 'builtin_ru'
+                     ? 'рус шаблон банки (' + (tmM ? tmM[1] : '?') + ' та)'
+                     : 'файл шаблон (' + (tmM ? tmM[1] : '?') + ' та)'; + ' шаблонов)';
+    const msg = '✅ Тайёр! Ёзувлар: ' + (recM ? recM[1] : '?') + '. Манба: ' + srcLabel + '.  Файл юкланди: ' + outName;
+    showStatus(msg, 'ok');
+  } catch(e){
+    showStatus('❌ ' + e.message, 'err');
+  }
+  btn.disabled = false;
+}
+</script>
+</body>
+</html>
