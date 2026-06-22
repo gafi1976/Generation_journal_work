@@ -1,0 +1,279 @@
+SIRDARYO VILOYATI AXBOROTLASHTIRISH MARKAZI BO'LIMI
+YETAKCHI MUHANDIS XOLBEKOV G'OFURNING
+2026 YILGA MO'LJALLANGAN YILLIK ISH REJASI
+
+Tuzuvchi: Xolbekov G'.T.
+Lavozim: Yetakchi muhandis
+
+===========================================================
+
+YANVAR OYI
+
+1. Yanvar oyi bo'yicha ish rejasini tuzish va bo'lim boshlig'i bilan
+   kelishish.
+2. Barcha tuман уzellari (SIR-761...SIR-771) bo'yicha yangi yil
+   elektr hisoblagich ko'rsatkichlarini olish va jadvalga kiritish.
+3. Telekom uchun elektr energiyasi reestrini shakllantirish va topshirish.
+4. Barcha faol uskunalar konfiguratsiya fayllarini zaxiralash
+   (/Config/2026-01 katalogiga saqlash).
+5. Server xonasidagi uskunalarga rejalashtirilgan texnik ko'rik o'tkazish:
+   changdan tozalash, temperaturani nazorat qilish, UPS ni sinab ko'rish.
+6. Lotus Domino serveriga texnik xizmat: disk bo'shlig'ini tekshirish,
+   tranzaksiya jurnallarini tozalash, foydalanuvchi sertifikatlarini yangilash.
+7. Antivirus tizimi (Kaspersky KIT) holati tekshiruvi: bazalar yangiligi,
+   siyosatlar qo'llanilishi, oylik hodisalar jurnalini tahlil qilish.
+8. O'z malakasini oshirish: OSPF protokolini o'rganish va Cisco Packet
+   Tracer da amaliyot.
+9. Yanvar oy oxirida bajarilgan ishlar bo'yicha hisobot tuzish va
+   bo'lim boshlig'iga topshirish.
+
+-----------------------------------------------------------
+
+FEVRAL OYI
+
+1. Fevral oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini olish va
+   reestр tuzish.
+3. Barcha uzellar UPS qurilmalarini rejalashtirilgan tekshiruvi:
+   5 daqiqa quvvatsizlik imitaliyasi, akumulyator sig'imini o'lchash.
+4. Muammoli uzellar (SIR-762, SIR-768) uchun akkumulyator almashtirishni
+   rejalashtirish va so'rovnoma berish.
+5. Tarmoq monitoring tizimi (Dude) ni yangilash: yangi qurilmalar qo'shish,
+   SNMP sozlash, Telegram orqali xabarnoma sinovi.
+6. Lotus Notes klientlarini rejalashtirilgan yangilash.
+7. Foydalanuvchilar uchun axborot xavfsizligi bo'yicha yo'riqnoma o'tkazish.
+8. O'z malakasini oshirish: HSRP/VRRP yuqori mavjudlik texnologiyalarini
+   o'rganish.
+9. Fevral oy oxirida hisobot tuzish va bo'lim boshlig'iga topshirish.
+
+-----------------------------------------------------------
+
+MART OYI
+
+1. Mart oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini olish.
+3. Yozgi davrga tayyorgarlik: barcha uzellardagi sovutish tizimlarini
+   tekshirish (shkaflardagi va kommutatorlardagi gullar), temperaturani
+   o'lchash va hujjatlashtirish.
+4. Filtrlarni tozalash: shkaflardagi havo filtrlari, server xonasi
+   konditsionerlari.
+5. Kritik uzellarda (SIR-762, SIR-768) akkumulyatorlarni almashtirish,
+   montaj/demontaj dalolatnomalari tuzish.
+6. Tarmoqning barcha faol uskunalarida parol siyosatini tekshirish va
+   yangilash.
+7. DNS, DHCP serverlar konfiguratsiyasini tekshirish va hujjatlashtirir.
+8. O'z malakasini oshirish: BGP protokoli asoslari va IPv6 ni o'rganish.
+9. Mart oyi hisobotini tuzish. Navruz bayramiga qadar barcha rejalashtirilgan
+   ishlarni tugallash.
+
+-----------------------------------------------------------
+
+APREL OYI
+
+1. Aprel oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini olish va
+   1-chorak uchun umumiy elektr iste'moli hisobotini tuzish.
+3. I chorak ish natijalarini tahlil qilish: bajarilgan vazifalar, insident­lar,
+   yechilmagan muammolar.
+4. Optik kanallar sifatini refraktometr yordamida tekshirish, o'lchov
+   baennomasi tuzish.
+5. Server xonasini ko'chirish yoki qayta tashkil etish bo'lsa — rejasini
+   tuzish va kelishish.
+6. Barcha uzellar bo'yicha uskunalar inventarizatsiyasini o'tkazish,
+   bazani yangilash.
+7. Yangi abonentlar ulash yoki konfiguratsiya o'zgartirishlari bo'yicha
+   so'rovlarni bajarish.
+8. O'z malakasini oshirish: Linux ma'murchiligi (tarmoq buyruqlari,
+   skriptlar, iptables) ni o'rganish.
+9. Aprel oyi hisobotini tuzish va topshirish.
+
+-----------------------------------------------------------
+
+MAY OYI
+
+1. May oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini olish.
+3. Barcha tuман уzellari uchun rejalashtirilgan profilaktika sayohati:
+   - 1-guruh: SIR-764 (Navruz), SIR-765 (Paxtaobod), SIR-767 (Sardoba)
+   - 2-guruh: SIR-771 (Yangiyer), SIR-769 (Xavast), SIR-770 (Shirin),
+              SIR-762 (Bayaut)
+   - 3-guruh: SIR-768 (Sirdaryo), SIR-766 (Sayhunobod), SIR-761 (Dehqonobod)
+4. Har bir uzelda: changdan tozalash, gullarni tekshirish va almashtirish
+   (zarur bo'lsa), UPS ni sinovdan o'tkazish, hisoblagich ko'rsatkichlarini olish.
+5. Tarmoq konfiguratsiyalarini zaxiralash (may sana).
+6. Foydalanuvchilar elektron pochta (Lotus Notes) kvotalarini tekshirish
+   va zarur bo'lsa kengaytirish.
+7. O'z malakasini oshirish: Zabbix monitoring tizimini o'rganish va sinov
+   virtual mashinasida o'rnatish.
+8. May oyi hisobotini tuzish va topshirish.
+
+-----------------------------------------------------------
+
+IYUN OYI
+
+1. Iyun oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini olish.
+3. Server xonasi konditsionerlariga yozgi profilaktika: filtrlarni yuvish,
+   drenajni tekshirish, sovutish samaradorligini o'lchash.
+4. II chorak ish natijalarini tahlil qilish: uptime statistikasi, insidentlar
+   soni va turlari, talab etilgan resurslar.
+5. Kelgusi yil uchun uskunalar sotib olish bo'yicha texnik topshiriq
+   loyihasini tuzish (kommutatorlar, UPS, akkumulyatorlar, SFP).
+6. Administrator jurnalida ma'lumotlar bazasini tekshirish va arxivlash.
+7. Cisco yoki MES uskunalar proshivkasini yangilash (zaxira nusxa
+   olgandan so'ng).
+8. O'z malakasini oshirish: Cisco CCNA 200-301 sertifikatsiyasiga
+   tayyorgarlik — ACL va Wireless mavzulari.
+9. Iyun oyi hisobotini va yarim yillik umumiy hisobotni tuzish va topshirish.
+
+-----------------------------------------------------------
+
+IYUL OYI
+
+1. Iyul oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini olish.
+3. Issiq davr: barcha uzellarda temperature monitoring kuchaytirish.
+   Har hafta Dude orqali temperatura ko'rsatkichlarini nazorat qilish.
+4. Tarmoq xavfsizligi auditi:
+   - Faol uskunalarda parollar tekshiruvi
+   - ACL ro'yxatlarini ko'rib chiqish
+   - SNMP community string-larni yangilash
+   - Syslog jurnalidagi shubhali urinishlarni tahlil qilish.
+5. NTP sinxronizatsiyasini barcha uskunalarda tekshirish.
+6. Yilning birinchi yarmi uchun inventarizatsiya hisobotini tuzish.
+7. O'z malakasini oshirish: VMware vSphere virtualizatsiya asoslarini
+   o'rganish.
+8. Iyul oyi hisobotini tuzish va topshirish.
+
+-----------------------------------------------------------
+
+AVGUST OYI
+
+1. Avgust oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini olish va
+   reestr tuzish.
+3. Rejalashtirilgan profilaktika sayohati: barcha 3 guruh uzellariga
+   borib, changdan tozalash, UPS tekshiruvi, hisoblagich ko'rsatkichlarini olish.
+4. Server xonasi UPS (Eaton 5PX) ni to'liq texnik ko'rikdan o'tkazish:
+   akkumulyator sig'imi testi, avtomatik kommutatsia vaqtini o'lchash.
+5. Yillik zaxira nusxalash skriptini tekshirish va yangilash: yangi
+   qurilmalar qo'shilganmi, hamma 19 ta qurilma qamrab olinganmi.
+6. IP-telefon tizimi (Issabel) texnik ko'rigi: SIP hisoblari, tranklar,
+   sifat tekshiruvi.
+7. O'z malakasini oshirish: tarmoq diagnostikasi usullari — Wireshark
+   da paketlarni tahlil qilish amaliyoti.
+8. Avgust oyi hisobotini tuzish va topshirish.
+
+-----------------------------------------------------------
+
+SENTABR OYI
+
+1. Sentabr oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini olish.
+3. Kuzgi davrga tayyorgarlik:
+   - Tashqi shkaflarning isitish elementlari tekshiruvi
+   - Kabel kirish tirishlarining germetizatsiyasi
+   - Kuzda past haroratda akkumulyator sig'imini nazorat qilish.
+4. III chorak ish natijalarini tahlil qilish: uptime hisoboti, insidentlar
+   tahlili, tavsiyalar.
+5. Mustaqillik kuni oldidan muhim infratuzilma tekshiruvi va
+   barqarorlikni ta'minlash.
+6. Yangi abonentlar ulash yoki konfiguratsiya so'rovlarini bajarish.
+7. Lotus Notes ma'murchiligi: foydalanuvchilar ro'yxatini yangilash,
+   faolsizlangan hisoblarni bloklash.
+8. O'z malakasini oshirish: tarmoq xavfsizligi — IPSec VPN sozlash
+   amaliyoti.
+9. Sentabr oyi hisobotini tuzish va topshirish.
+
+-----------------------------------------------------------
+
+OKTABR OYI
+
+1. Oktabr oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini olish.
+3. Barcha tuман уzellariga kuzgi profilaktika sayohati: uskunalar holati,
+   sovutish tizimlari ishi (endi "High" dan "Auto" rejimga o'tkazish),
+   UPS akkumulyator tekshiruvi.
+4. Kabel xo'jaligi tekshiruvi: patch-panellardagi RJ-45 ulanishlar,
+   optik konnektorlarni tozalash, kabel belgilashlarini yangilash.
+5. Tarmoq hujjatlarini yangilash: IP-adreslashuv jadvali, uzellар схемаси,
+   yangi qurilmalar pasporti.
+6. Foydalanuvchilar uchun axborot xavfsizligi bo'yicha ikkinchi yo'riqnoma
+   o'tkazish (yilning ikkinchi yarmi uchun).
+7. O'z malakasini oshirish: Lotus Notes Domino Designer — agent va
+   skript yozish amaliyoti.
+8. Oktabr oyi hisobotini tuzish va topshirish.
+
+-----------------------------------------------------------
+
+NOYABR OYI
+
+1. Noyabr oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini olish va
+   reestr tuzish.
+3. IV chorak uchun kanal yuklanish tahlili Dude tizimi orqali:
+   eng ko'p yuklanган kanallarni aniqlash, QoS sozlash tavsiyalari.
+4. Yil oxiri uchun uskunalar inventarizatsiyasi: hisob bazasi bilan
+   real mavjudligini solishtirish, chiqarib yuborish aktlarini rasmiylashtirish.
+5. Tarmoq konfiguratsiyalarini yil oxiri zaxiralash.
+6. Windows Server va ish stantsiyalarida yillik yamoq-boshqaruvi
+   (patch management) tekshiruvi.
+7. Kelgusi yilga ish rejasi loyihasini tayyorlash va bo'lim boshlig'i
+   bilan kelishish uchun taqdim etish.
+8. O'z malakasini oshirish: Windows Server 2025 yangi imkoniyatlarini
+   o'rganish.
+9. Noyabr oyi hisobotini tuzish va topshirish.
+
+-----------------------------------------------------------
+
+DEKABR OYI
+
+1. Dekabr oyi ish rejasini tuzish.
+2. Tuман уzellari bo'yicha oxirgi yil elektr hisoblagich ko'rsatkichlarini
+   olish va yillik umumiy jadval tuzish.
+3. Barcha tuман уzellariga yil oxiri profilaktika sayohati:
+   kishi holi bo'lmagan joylardagi uskunalar tozalash, UPS tekshiruv,
+   kritik nuqtalar e'tiborga olish.
+4. Syslog va Dude ma'lumotlari bo'yicha yillik insidentlar statistikasini
+   tahlil qilish va xulosalar chiqarish.
+5. Konstitusiya kuni oldidan infratuzilma barqarorligini ta'minlash.
+6. Yillik hisobot tuzish:
+   - Tarmoq mavjudligi (uptime) yillik foizi
+   - Bajarilgan profilaktikalar soni
+   - Almashtirilgan va o'rnatilgan uskunalar
+   - Ulangan yangi abonentlar
+   - Tavsiyalar kelgusi yilga.
+7. Kelgusi yil uchun texnik topshiriq va so'rovnomalarni rasmiylashtirish.
+8. Yillik ish rejasining bajarilish hisobotini bo'lim boshlig'iga topshirish.
+
+===========================================================
+
+DOIMIY OYLIK MAJBURIYATLAR (har oy bajariladi):
+
+1. Oylik ish rejasini tuzish va bo'lim boshlig'i bilan kelishish.
+2. Barcha tuман уzellari bo'yicha elektr hisoblagich ko'rsatkichlarini
+   olish, jadvalga kiritish va telekom uchun reestr tuzish.
+3. Administrator jurnaliga har kuni bajarilgan ishlarni qayd etish.
+4. Tarmoq monitoring (Dude) orqali barcha uzellар mavjudligini nazorat qilish.
+5. Insidentlar sodir bo'lganda: bo'lim boshlig'ini xabardor qilish,
+   tezkor bartaraf etish, jurnalga qayd etish.
+6. Foydalanuvchi arizalarini qabul qilish va bajarish
+   (Lotus Notes, tarmoq, uskunalar).
+7. Oylik hisobot tuzish va bo'lim boshlig'iga topshirish.
+
+===========================================================
+
+YILLIK ISH REJASINING ASOSIY KO'RSATKICHLARI:
+
+- Tarmoq mavjudligi (uptime) maqsadi: 99.5% dan kam bo'lmaslik
+- Rejalashtirilgan profilaktika bajarilishi: 100%
+- Insidentlarga o'rtacha javob berish vaqti: 2 soatdan oshmaslik
+- Administrator jurnaliga muntazam yozib borish: har kuni
+- Oylik hisobotlarni topshirish muddati: har oyning oxirgi ish kunida
+- Malaka oshirish: yiliga kamida 1 ta yangi texnologiya/protokol o'rganish
+
+===========================================================
+
+    Yetakchi muhandis: Xolbekov G'.T.
+    Bo'lim boshlig'i: _____________________
+    Tasdiqlangan: "___" _____________ 2026 yil
